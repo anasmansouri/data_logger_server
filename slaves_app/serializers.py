@@ -37,7 +37,6 @@ class SlaveSerializer(serializers.ModelSerializer):
             name = validated_data["name"]
             enable = validated_data["enable"]
             mac = validated_data["mac"]
-
         except KeyError:
             raise serializers.ValidationError({'error': "please make sure to fill all informations"})
         if setting == "" or SensorValueType == "" or name == "" or enable == "" or mac == "" or slave_address == "":
