@@ -1,6 +1,6 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-
+from rest_framework import serializers
 # Create your models here.
 
 
@@ -18,7 +18,7 @@ class Setting(models.Model):
         return self.slaves.name
 
 
-class Register(models.Model):
+class SensorValueType(models.Model):
     value_class_choices = (('FLOAT32', 'REAL (FLOAT32)'),
                            ('FLOAT32', 'SINGLE (FLOAT32)'),
                            ('FLOAT32', 'FLOAT32'),
@@ -45,9 +45,9 @@ class Register(models.Model):
                            ('STRING', 'STRING'),
                            )
 
-    Address = models.CharField(max_length=50)
-    Name = models.CharField(max_length=200, blank=False)
-    Unit = models.CharField(max_length=50, blank=False)
+    start_register_address = models.CharField(max_length=50)
+    name = models.CharField(max_length=200, blank=False)
+    unit = models.CharField(max_length=50, blank=False)
     value_class = models.CharField(max_length=15, default='INT16', verbose_name="value_class",
                                    choices=value_class_choices)
 
@@ -62,7 +62,7 @@ class Slave(models.Model):
             MinValueValidator(0)
         ])
     setting = models.ForeignKey(Setting,on_delete=models.CASCADE)
-    slaves = models.ForeignKey(Register, on_delete=models.CASCADE)
+    sensor_value_type = models.ForeignKey(SensorValueType, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     enable = models.BooleanField(default=True)
     mac = models.CharField(max_length=50)
