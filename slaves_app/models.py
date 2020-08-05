@@ -18,6 +18,24 @@ class Setting(models.Model):
         return self.baud
 
 
+
+
+class Slave(models.Model):
+    slave_address = models.IntegerField(primary_key=True,default=0,
+        validators=[
+            MaxValueValidator(247),
+            MinValueValidator(0)
+        ])
+    setting = models.OneToOneField(Setting,on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    enable = models.BooleanField(default=True)
+    mac = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.Name
+
+
+
 class SensorValueType(models.Model):
     value_class_choices = (('FLOAT32', 'REAL (FLOAT32)'),
                            ('FLOAT32', 'SINGLE (FLOAT32)'),
@@ -51,25 +69,7 @@ class SensorValueType(models.Model):
     value_class = models.CharField(max_length=15, default='INT16', verbose_name="value_class",
                                    choices=value_class_choices)
     value = models.CharField(max_length=300,blank=True)
+    slave = models.ForeignKey(Slave, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.Name
-
-
-class Slave(models.Model):
-    slave_address = models.IntegerField(primary_key=True,default=0,
-        validators=[
-            MaxValueValidator(247),
-            MinValueValidator(0)
-        ])
-    setting = models.ForeignKey(Setting,on_delete=models.CASCADE)
-    sensor_value_type = models.ForeignKey(SensorValueType, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-    enable = models.BooleanField(default=True)
-    mac = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.Name
-
-
-
