@@ -5,7 +5,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.decorators import permission_classes, api_view
 from rest_framework.permissions import AllowAny
-from slaves_app.models import  Setting ,SensorValueType,Slave
+from slaves_app.models import  Setting ,Sensor_value_type,Slave
 from slaves_app.serializers import SettingSerializer , SlaveSerializer ,  SensorValueTypeSerializer
 from rest_framework.response import Response
 from rest_framework.generics import get_object_or_404
@@ -145,7 +145,7 @@ class SettingViewSet(viewsets.ModelViewSet):
     serializer_class = SettingSerializer
 
 class SensorValueTypeViewSet(viewsets.ModelViewSet):
-    queryset = SensorValueType.objects.all()
+    queryset = Sensor_value_type.objects.all()
     serializer_class = SensorValueTypeSerializer
 
 

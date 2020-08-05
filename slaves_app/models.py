@@ -36,7 +36,7 @@ class Slave(models.Model):
 
 
 
-class SensorValueType(models.Model):
+class Sensor_value_type(models.Model):
     value_class_choices = (('FLOAT32', 'REAL (FLOAT32)'),
                            ('FLOAT32', 'SINGLE (FLOAT32)'),
                            ('FLOAT32', 'FLOAT32'),
@@ -69,7 +69,7 @@ class SensorValueType(models.Model):
     value_class = models.CharField(max_length=15, default='INT16', verbose_name="value_class",
                                    choices=value_class_choices)
     value = models.CharField(max_length=300,blank=True)
-    slave = models.ForeignKey(Slave, on_delete=models.CASCADE)
+    slave = models.ForeignKey(Slave, on_delete=models.CASCADE,blank=True)
 
     def __str__(self):
-        return self.Name
+        return self.name
