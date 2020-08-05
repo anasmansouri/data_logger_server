@@ -5,17 +5,17 @@ from rest_framework import serializers
 
 
 class Setting(models.Model):
-    CHOICES = (
+    choices = (
     ('E', 'Even'), ('N', 'None'), ('O', 'Odd'),(0, 'default'))
-    Baud = (
+    baud = (
         ('9600', '9600'), ('19200', '19200'), ('38400', '38400'))
-    Baudrate =models.CharField(max_length=10, choices=Baud ,blank=False)
-    Parity =  models.CharField(max_length=5, choices=CHOICES ,blank=False)
-    Stop = models.PositiveSmallIntegerField(default=1)
-    Bits = models.PositiveSmallIntegerField(default=8)
+    baudrate =models.CharField(max_length=10, choices=baud ,blank=False)
+    parity =  models.CharField(max_length=5, choices=choices ,blank=False)
+    stop = models.PositiveSmallIntegerField(default=1)
+    bits = models.PositiveSmallIntegerField(default=8)
 
     def __str__(self):
-        return self.slaves.name
+        return self.baud
 
 
 class SensorValueType(models.Model):
@@ -45,11 +45,12 @@ class SensorValueType(models.Model):
                            ('STRING', 'STRING'),
                            )
 
-    start_register_address = models.CharField(max_length=50)
+    start_registers_address = models.CharField(max_length=50)
     name = models.CharField(max_length=200, blank=False)
     unit = models.CharField(max_length=50, blank=False)
     value_class = models.CharField(max_length=15, default='INT16', verbose_name="value_class",
                                    choices=value_class_choices)
+    value = models.CharField(max_length=300,blank=True)
 
     def __str__(self):
         return self.Name

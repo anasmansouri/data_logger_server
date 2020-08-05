@@ -149,9 +149,7 @@ class SlaveViewSet(viewsets.ModelViewSet):
     A simple view set for viewing and editing profiles
     """
     queryset = Slave.objects.all()
-    serializer_class = Slave
-    filter_backends = (SearchFilter, OrderingFilter)
-    search_fields = ['name', 'mac', 'slave_address']
+    serializer_class = SlaveSerializer
 
 
 @api_view(['GET'])
@@ -163,5 +161,4 @@ def salve_search(request):
     queryset.extend(list(Slave.objects.filter(slave_address__icontains=search)))
     queryset = list(dict.fromkeys(queryset))  # remounve deplicated items
     serializer = SlaveSerializer(queryset, many=True)
-    test = serializer.data
     return Response(serializer.data)
