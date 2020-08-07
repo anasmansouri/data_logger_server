@@ -1,16 +1,18 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from rest_framework import serializers
+
+
 # Create your models here.
 
 
 class Setting(models.Model):
     choices = (
-    ('E', 'Even'), ('N', 'None'), ('O', 'Odd'),(0, 'default'))
+        ('E', 'Even'), ('N', 'None'), ('O', 'Odd'), (0, 'default'))
     baud = (
         ('9600', '9600'), ('19200', '19200'), ('38400', '38400'))
-    baudrate =models.CharField(max_length=10, choices=baud ,blank=False)
-    parity =  models.CharField(max_length=5, choices=choices ,blank=False)
+    baudrate = models.CharField(max_length=10, choices=baud, blank=False)
+    parity = models.CharField(max_length=5, choices=choices, blank=False)
     stop = models.PositiveSmallIntegerField(default=1)
     bits = models.PositiveSmallIntegerField(default=8)
 
@@ -18,15 +20,13 @@ class Setting(models.Model):
         return self.baud
 
 
-
-
 class Slave(models.Model):
-    slave_address = models.IntegerField(primary_key=True,default=0,
-        validators=[
-            MaxValueValidator(247),
-            MinValueValidator(0)
-        ])
-    setting = models.OneToOneField(Setting,on_delete=models.CASCADE)
+    slave_address = models.IntegerField(primary_key=True, default=0,
+                                        validators=[
+                                            MaxValueValidator(247),
+                                            MinValueValidator(0)
+                                        ])
+    setting = models.OneToOneField(Setting, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     enable = models.BooleanField(default=True)
     mac = models.CharField(max_length=50)
@@ -35,8 +35,7 @@ class Slave(models.Model):
         return self.Name
 
 
-
-class Sensor_value_type(models.Model):
+class MemoryZoneOfSlaves(models.Model):
     value_class_choices = (('FLOAT32', 'REAL (FLOAT32)'),
                            ('FLOAT32', 'SINGLE (FLOAT32)'),
                            ('FLOAT32', 'FLOAT32'),
@@ -68,8 +67,15 @@ class Sensor_value_type(models.Model):
     unit = models.CharField(max_length=50, blank=False)
     value_class = models.CharField(max_length=15, default='INT16', verbose_name="value_class",
                                    choices=value_class_choices)
-    value = models.CharField(max_length=300,blank=True)
-    slave = models.ForeignKey(Slave, on_delete=models.CASCADE,blank=True)
+    slave = models.ForeignKey(Slave, on_delete=models.CASCADE, blank=True)
 
     def __str__(self):
         return self.name
+
+
+class SensorValue(models.Model):
+    time_of_picking = models.DateTimeField(null=True, blank=True, auto_now_add=True)
+    memory_zone_of_slaves = models.ForeignKey(MemoryZoneOfSlaves, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "value {} , data {}".format(self.time_of_picking,self.Sensor_value_type)

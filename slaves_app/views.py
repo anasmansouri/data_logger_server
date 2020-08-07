@@ -5,8 +5,8 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.decorators import permission_classes, api_view
 from rest_framework.permissions import AllowAny
-from slaves_app.models import Setting, Sensor_value_type, Slave
-from slaves_app.serializers import SettingSerializer, SlaveSerializer, SensorValueTypeSerializer
+from slaves_app.models import Setting, MemoryZoneOfSlaves, Slave
+from slaves_app.serializers import SettingSerializer, SlaveSerializer, MemoryZoneOfSlavesSerializer
 from rest_framework.response import Response
 from rest_framework.generics import get_object_or_404
 from rest_framework import serializers
@@ -18,9 +18,9 @@ class SettingViewSet(viewsets.ModelViewSet):
     serializer_class = SettingSerializer
 
 
-class SensorValueTypeViewSet(viewsets.ModelViewSet):
-    queryset = Sensor_value_type.objects.all()
-    serializer_class = SensorValueTypeSerializer
+class MemoryZoneOfSlavesViewSet(viewsets.ModelViewSet):
+    queryset = MemoryZoneOfSlaves.objects.all()
+    serializer_class = MemoryZoneOfSlavesSerializer
 
 
 class SlaveViewSet(viewsets.ModelViewSet):
@@ -43,10 +43,10 @@ def salve_search(request):
 
     list_sensor_value_type = []
     for slave in queryset:
-        list_sensor_value_type.append(list(Sensor_value_type.objects.filter(slave=slave)))
+        list_sensor_value_type.append(list(MemoryZoneOfSlaves.objects.filter(slave=slave)))
     list_sensor_value_type_json = []
     for l in list_sensor_value_type:
-        list_sensor_value_type_json.append(SensorValueTypeSerializer(l, many=True))
+        list_sensor_value_type_json.append(MemoryZoneOfSlavesSerializer(l, many=True))
     data = serializer.data
     for i in range(0, len(data)):
         data[i]["sensor_value_type"] = list_sensor_value_type_json[i].data
