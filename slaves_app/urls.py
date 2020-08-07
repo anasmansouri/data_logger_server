@@ -1,6 +1,6 @@
 from rest_framework import routers
 from slaves_app import views
-
+from django.urls import path
 router = routers.SimpleRouter()
 
 router.register(r'Slaves', views.SlaveViewSet, basename="Slaves_list")
@@ -9,6 +9,6 @@ router.register(r'SensorValueType', views.SensorValueTypeViewSet, basename="Sens
 
 
 
-urlpatterns = [
+urlpatterns = [path('salve_search/', views.salve_search),
                ]
 urlpatterns += router.urls
