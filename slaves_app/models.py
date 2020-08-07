@@ -13,8 +13,9 @@ class Setting(models.Model):
         ('9600', '9600'), ('19200', '19200'), ('38400', '38400'))
     baudrate = models.CharField(max_length=10, choices=baud, blank=False)
     parity = models.CharField(max_length=5, choices=choices, blank=False)
-    stop = models.PositiveSmallIntegerField(default=1)
-    bits = models.PositiveSmallIntegerField(default=8)
+    stopbits = models.PositiveSmallIntegerField(default=1)
+    bytesize = models.PositiveSmallIntegerField(default=8)
+    timeout = models.FloatField()
 
     def __str__(self):
         return self.baud
@@ -32,10 +33,10 @@ class Slave(models.Model):
     mac = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.Name
+        return self.name
 
 
-class MemoryZoneOfSlaves(models.Model):
+class MemoryZone(models.Model):
     value_class_choices = (('FLOAT32', 'REAL (FLOAT32)'),
                            ('FLOAT32', 'SINGLE (FLOAT32)'),
                            ('FLOAT32', 'FLOAT32'),
@@ -73,9 +74,10 @@ class MemoryZoneOfSlaves(models.Model):
         return self.name
 
 
-class SensorValue(models.Model):
+class MemoryZoneHistory(models.Model):
     time_of_picking = models.DateTimeField(null=True, blank=True, auto_now_add=True)
-    memory_zone_of_slaves = models.ForeignKey(MemoryZoneOfSlaves, on_delete=models.CASCADE)
+    memory_zone = models.ForeignKey(MemoryZone, on_delete=models.CASCADE)
+    value = models.CharField(max_length=32, blank=False)
 
     def __str__(self):
-        return "value {} , data {}".format(self.time_of_picking,self.Sensor_value_type)
+        return "value {} , data {}".format(self.time_of_picking, self.memory_zone)
