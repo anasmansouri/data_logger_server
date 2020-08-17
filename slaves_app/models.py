@@ -21,9 +21,8 @@ class Setting(models.Model):
         return self.baud
 
 
-
 class Slave(models.Model):
-    slave_address = models.IntegerField(primary_key=True, default=0,
+    slave_address = models.IntegerField(primary_key=True,
                                         validators=[
                                             MaxValueValidator(247),
                                             MinValueValidator(0)
@@ -39,18 +38,13 @@ class Slave(models.Model):
     def get_memory_zones(self):
         return MemoryZone.objects.filter(slave=self)
 
-    def find_instrument(self, instruments):
-        for instrument in instruments:
-            if instrument.address == self.slave_address:
-                return instrument
-        return None
-
     @staticmethod
     def get_enabled_slaves():
         return Slave.objects.filter(enable=True)
 
 
 class MemoryZone(models.Model):
+    id = models.AutoField(primary_key=True)
     value_class_choices = (('FLOAT32', 'REAL (FLOAT32)'),
                            ('FLOAT32', 'SINGLE (FLOAT32)'),
                            ('FLOAT32', 'FLOAT32'),
@@ -82,7 +76,10 @@ class MemoryZone(models.Model):
     unit = models.CharField(max_length=50, blank=False)
     value_class = models.CharField(max_length=15, default='INT16', verbose_name="value_class",
                                    choices=value_class_choices)
-    slave = models.ForeignKey(Slave, on_delete=models.CASCADE, blank=True)
+    slave = models.ForeignKey(Slave, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = (("slave", "start_registers_address"),)
 
     def __str__(self):
         return self.name
@@ -157,6 +154,7 @@ class MemoryZone(models.Model):
             value = slave_instrument.read_float(registeraddress=self.start_registers_address,
                                                 functioncode=3,
                                                 number_of_registers=4)
+        # TODO maybe the problem is here
         elif self.is_value_class_int_64():
             # we can add an attribut named number_of_decimals in the memoryzone class
             # maybe we wil get an error because this function is private
