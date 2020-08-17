@@ -71,7 +71,7 @@ class MemoryZone(models.Model):
                            ('STRING', 'STRING'),
                            )
 
-    start_registers_address = models.IntegerField(max_length=50)
+    start_registers_address = models.IntegerField()
     name = models.CharField(max_length=200, blank=False)
     unit = models.CharField(max_length=50, blank=False)
     value_class = models.CharField(max_length=15, default='INT16', verbose_name="value_class",
