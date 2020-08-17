@@ -15,6 +15,7 @@ router.register(r'MemoryZoneHistory', views.MemoryZoneHistoryViewSet, basename="
 
 ''
 urlpatterns = [path('salve_search/', views.salve_search),
+               path('read_data/', views.read_data)
                # path('<int:slave_pk>/<int:pk>/', views.MemoryZoneViewSet.as_view({'delete':'destroy'}), name="memory_zone_details")
                ]
 urlpatterns += router.urls
