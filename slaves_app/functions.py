@@ -17,7 +17,7 @@ def create_slave_instrument(slave):
     instrument = minimalmodbus.Instrument('/dev/ttyUSB0', slave.slave_address)
     instrument.serial.baudrate = slave.setting.baudrate
     instrument.serial.parity = slave.setting.parity
-    instrument.serial.stopbits = slave.setting.bits
+    instrument.serial.stopbits = slave.setting.stopbits
     instrument.serial.bytesize = slave.setting.bytesize
     instrument.serial.timeout = slave.setting.timeout
     instrument.mode = minimalmodbus.MODE_RTU
