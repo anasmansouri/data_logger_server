@@ -74,3 +74,4 @@ def salve_search(request):
 def read_data(request):
     enabled_slaves = Slave.get_enabled_slaves()
     read_sensors_values(enabled_slaves)
+    return Response({"data", "koulchi naadi"})
