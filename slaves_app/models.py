@@ -21,6 +21,7 @@ class Setting(models.Model):
         return self.baud
 
 
+
 class Slave(models.Model):
     slave_address = models.IntegerField(primary_key=True, default=0,
                                         validators=[
@@ -44,7 +45,8 @@ class Slave(models.Model):
                 return instrument
         return None
 
-    def get_enabled_slaves(self):
+    @staticmethod
+    def get_enabled_slaves():
         return Slave.objects.filter(enable=True)
 
 

@@ -6,8 +6,7 @@ from rest_framework import viewsets
 from rest_framework.decorators import permission_classes, api_view
 from rest_framework.permissions import AllowAny
 
-from slaves_app.functions import get_enabled_slaves, create_an_instrument_for_each_slave, \
-    read_sensors_values
+from slaves_app.functions import read_sensors_values
 from slaves_app.models import Setting, MemoryZone, Slave, MemoryZoneHistory
 from slaves_app.serializers import SettingSerializer, SlaveSerializer, MemoryZoneSerializer, MemoryZoneHistorySerializer
 from rest_framework.response import Response
@@ -72,5 +71,5 @@ def salve_search(request):
 @api_view(["GET"])
 @transaction.atomic
 def read_data(request):
-    enabled_slaves = get_enabled_slaves()
+    enabled_slaves = Slave.get_enabled_slaves()
     read_sensors_values(enabled_slaves)
