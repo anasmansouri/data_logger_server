@@ -35,6 +35,18 @@ class Slave(models.Model):
     def __str__(self):
         return self.name
 
+    def get_memory_zones(self):
+        return MemoryZone.objects.filter(slave=self)
+
+    def find_instrument(self, instruments):
+        for instrument in instruments:
+            if instrument.address == self.slave_address:
+                return instrument
+        return None
+
+    def get_enabled_slaves(self):
+        return Slave.objects.filter(enable=True)
+
 
 class MemoryZone(models.Model):
     value_class_choices = (('FLOAT32', 'REAL (FLOAT32)'),
@@ -72,6 +84,122 @@ class MemoryZone(models.Model):
 
     def __str__(self):
         return self.name
+
+    def is_value_class_float_32(self):
+        if self.value_class == "FLOAT32":
+            return True
+        else:
+            return False
+
+    def is_value_class_float_64(self):
+        if self.value_class == "FLOAT64":
+            return True
+        else:
+            return False
+
+    def is_value_class_int_64(self):
+        if self.value_class == "INT64":
+            return True
+        else:
+            return False
+
+    def is_value_class_uint_64(self):
+        if self.value_class == "UINT64":
+            return True
+        else:
+            return False
+
+    def is_value_class_int_32(self):
+        if self.value_class == "INT32":
+            return True
+        else:
+            return False
+
+    def is_value_class_uint_32(self):
+        if self.value_class == "UINT":
+            return True
+        else:
+            return False
+
+    def is_value_class_int_16(self):
+        if self.value_class == "INT16":
+            return True
+        else:
+            return False
+
+    def is_value_class_uint_16(self):
+        if self.value_class == "UINT16":
+            return True
+        else:
+            return False
+
+    def is_value_class_string(self):
+        if self.value_class == "STRING":
+            return True
+        else:
+            return False
+
+    def is_value_class_boolean(self):
+        if self.value_class == "BOOLEAN":
+            return True
+        else:
+            return False
+
+    def read_value(self, slave_instrument):
+        value = ""
+        if self.is_value_class_float_32():
+            value = slave_instrument.read_float(registeraddress=self.start_registers_address,
+                                                functioncode=3,
+                                                number_of_registers=2)
+        elif self.is_value_class_float_64():
+            value = slave_instrument.read_float(registeraddress=self.start_registers_address,
+                                                functioncode=3,
+                                                number_of_registers=4)
+        elif self.is_value_class_int_64():
+            # we can add an attribut named number_of_decimals in the memoryzone class
+            # maybe we wil get an error because this function is private
+            value = slave_instrument._generic_command(functioncode=3,
+                                                      registeraddress=self.start_registers_address,
+                                                      number_of_decimals=0,
+                                                      number_of_registers=4,
+                                                      signed=True,
+                                                      )
+        elif self.is_value_class_uint_64():
+            # we can add an attribut named number_of_decimals in the memoryzone class
+            value = slave_instrument._generic_command(functioncode=3,
+                                                      registeraddress=self.start_registers_address,
+                                                      number_of_decimals=0,
+                                                      number_of_registers=4,
+                                                      signed=False,
+                                                      )
+
+        elif self.is_value_class_int_32():
+            # we can add an attribut named number_of_decimals in the memoryzone class
+            value = slave_instrument.read_long(registeraddress=self.start_registers_address,
+                                               functioncode=3, signed=True)
+        elif self.is_value_class_uint_32():
+            # we can add an attribut named number_of_decimals in the memoryzone class
+            value = slave_instrument.read_long(registeraddress=self.start_registers_address,
+                                               functioncode=3, signed=False)
+        elif self.is_value_class_int_16():
+            # we can add an attribut named number_of_decimals in the memoryzone class
+            value = slave_instrument.read_register(registeraddress=self.start_registers_address,
+                                                   functioncode=3, signed=True, number_of_decimals=0, )
+        elif self.is_value_class_uint_16():
+            # we can add an attribut named number_of_decimals in the memoryzone class
+            value = slave_instrument.read_register(registeraddress=self.start_registers_address,
+                                                   functioncode=3, signed=False, number_of_decimals=0, )
+        elif self.is_value_class_string():
+            # we can add an attribut named number_of_decimals in the memoryzone class
+            value = slave_instrument.read_string(registeraddress=self.start_registers_address,
+                                                 number_of_registers=16,
+                                                 functioncode=3)
+        elif self.is_value_class_boolean():
+            # we can add an attribut named number_of_decimals in the memoryzone class
+            value = slave_instrument.read_bit(registeraddress=self.start_registers_address, functioncode=2)
+            # instead of printing we have to create a new history object and save it
+        print(value)
+        return value
 
 
 class MemoryZoneHistory(models.Model):
