@@ -10,7 +10,6 @@ def read_sensors_values(slaves):
 def read_memory_zones(slave):
     slave_instrument = create_slave_instrument(slave)
     slave_memory_zones = slave.get_memory_zones()
-
     [print(memory_zone.read_value(slave_instrument)) for memory_zone in slave_memory_zones]
 
 
