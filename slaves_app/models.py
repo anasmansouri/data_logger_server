@@ -58,7 +58,7 @@ class Slave(models.Model):
     def get_slaves_with_name_or_mac_or_address_start_with(keyword):
         queryset = list(Slave.get_slaves_with_name_start_with(keyword))
         queryset.extend(list(Slave.get_slaves_with_mac_start_with(keyword)))
-        queryset.extend(list(Slave.get_slaves_with_name_or_mac_or_address_start_with(keyword)))
+        queryset.extend(list(Slave.get_slaves_with_address_start_with(keyword)))
         return Slave.objects.filter(slave_address__startswith=keyword)
 
 
