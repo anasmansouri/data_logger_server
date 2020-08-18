@@ -42,6 +42,25 @@ class Slave(models.Model):
     def get_enabled_slaves():
         return Slave.objects.filter(enable=True)
 
+    @staticmethod
+    def get_slaves_with_name_start_with(keword):
+        return Slave.objects.filter(name__startswith=keword)
+
+    @staticmethod
+    def get_slaves_with_mac_start_with(keyword):
+        return Slave.objects.filter(mac__startswith=keyword)
+
+    @staticmethod
+    def get_slaves_with_address_start_with(keyword):
+        return Slave.objects.filter(slave_address__startswith=keyword)
+
+    @staticmethod
+    def get_slaves_with_name_or_mac_or_address_start_with(keyword):
+        queryset = list(Slave.get_slaves_with_name_start_with(keyword))
+        queryset.extend(list(Slave.get_slaves_with_mac_start_with(keyword)))
+        queryset.extend(list(Slave.get_slaves_with_name_or_mac_or_address_start_with(keyword)))
+        return Slave.objects.filter(slave_address__startswith=keyword)
+
 
 class MemoryZone(models.Model):
     id = models.AutoField(primary_key=True)

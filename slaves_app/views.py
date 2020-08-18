@@ -13,6 +13,7 @@ from rest_framework.response import Response
 from rest_framework.generics import get_object_or_404
 from rest_framework import serializers
 from rest_framework.filters import SearchFilter, OrderingFilter
+from . import my_one_lib
 
 ## minimalmodbus
 
@@ -47,14 +48,10 @@ class SlaveViewSet(viewsets.ModelViewSet):
 @api_view(['GET'])
 @transaction.atomic
 def salve_search(request):
-    search = request.GET.get('search', '')
-    queryset = list(Slave.objects.filter(name__startswith=search))
-    queryset.extend(list(Slave.objects.filter(mac__startswith=search)))
-    queryset.extend(list(Slave.objects.filter(slave_address__startswith=search)))
-    # remounve deplicated items
-    queryset = list(dict.fromkeys(queryset))
+    keyword = request.GET.get('search', '')
+    queryset = Slave.get_slaves_with_name_or_mac_or_address_start_with(keyword=keyword)
+    queryset = my_one_lib.remove_redundancy_items_from_a_list(queryset=queryset)
     serializer = SlaveSerializer(queryset, many=True)
-
     list_memory_zone = []
     for slave in queryset:
         list_memory_zone.append(list(MemoryZone.objects.filter(slave=slave)))
