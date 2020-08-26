@@ -25,7 +25,7 @@ class Slave(models.Model):
     slave_address = models.IntegerField(primary_key=True,
                                         validators=[
                                             MaxValueValidator(247),
-                                            MinValueValidator(0)
+                                            MinValueValidator(1)
                                         ])
     setting = models.OneToOneField(Setting, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
@@ -64,37 +64,37 @@ class Slave(models.Model):
 
 class MemoryZone(models.Model):
     id = models.AutoField(primary_key=True)
-    value_class_choices = (('FLOAT32', 'REAL (FLOAT32)'),
-                           ('FLOAT32', 'SINGLE (FLOAT32)'),
-                           ('FLOAT32', 'FLOAT32'),
-                           ('UNIXTIMEF32', 'UNIXTIMEF32'),
-                           ('FLOAT64', 'LREAL (FLOAT64)'),
-                           ('FLOAT64', 'FLOAT  (FLOAT64)'),
-                           ('FLOAT64', 'DOUBLE (FLOAT64)'),
-                           ('FLOAT64', 'FLOAT64'),
-                           ('UNIXTIMEF64', 'UNIXTIMEF64'),
-                           ('INT64', 'INT64'),
-                           ('UINT64', 'UINT64'),
-                           ('UNIXTIMEI64', 'UNIXTIMEI64'),
-                           ('UNIXTIMEI32', 'UNIXTIMEI32'),
-                           ('INT32', 'INT32'),
-                           ('UINT32', 'DWORD (UINT32)'),
-                           ('UINT32', 'UINT32'),
-                           ('INT16', 'INT (INT16)'),
-                           ('INT16', 'INT16'),
-                           ('UINT16', 'WORD (UINT16)'),
-                           ('UINT16', 'UINT (UINT16)'),
-                           ('UINT16', 'UINT16'),
-                           ('BOOLEAN', 'BOOL (BOOLEAN)'),
-                           ('BOOLEAN', 'BOOLEAN'),
-                           ('STRING', 'STRING'),
-                           )
+    type_of_value_choices = (('FLOAT32', 'REAL (FLOAT32)'),
+                             ('FLOAT32', 'SINGLE (FLOAT32)'),
+                             ('FLOAT32', 'FLOAT32'),
+                             ('UNIXTIMEF32', 'UNIXTIMEF32'),
+                             ('FLOAT64', 'LREAL (FLOAT64)'),
+                             ('FLOAT64', 'FLOAT  (FLOAT64)'),
+                             ('FLOAT64', 'DOUBLE (FLOAT64)'),
+                             ('FLOAT64', 'FLOAT64'),
+                             ('UNIXTIMEF64', 'UNIXTIMEF64'),
+                             ('INT64', 'INT64'),
+                             ('UINT64', 'UINT64'),
+                             ('UNIXTIMEI64', 'UNIXTIMEI64'),
+                             ('UNIXTIMEI32', 'UNIXTIMEI32'),
+                             ('INT32', 'INT32'),
+                             ('UINT32', 'DWORD (UINT32)'),
+                             ('UINT32', 'UINT32'),
+                             ('INT16', 'INT (INT16)'),
+                             ('INT16', 'INT16'),
+                             ('UINT16', 'WORD (UINT16)'),
+                             ('UINT16', 'UINT (UINT16)'),
+                             ('UINT16', 'UINT16'),
+                             ('BOOLEAN', 'BOOL (BOOLEAN)'),
+                             ('BOOLEAN', 'BOOLEAN'),
+                             ('STRING', 'STRING'),
+                             )
 
     start_registers_address = models.IntegerField()
     name = models.CharField(max_length=200, blank=False)
     unit = models.CharField(max_length=50, blank=False)
-    value_class = models.CharField(max_length=15, default='INT16', verbose_name="value_class",
-                                   choices=value_class_choices)
+    type_of_value = models.CharField(max_length=15, default='INT16', verbose_name="type_of_value",
+                                     choices=type_of_value_choices)
     slave = models.ForeignKey(Slave, on_delete=models.CASCADE)
 
     class Meta:
@@ -173,24 +173,17 @@ class MemoryZone(models.Model):
             value = slave_instrument.read_float(registeraddress=self.start_registers_address,
                                                 functioncode=3,
                                                 number_of_registers=4)
-        # TODO maybe the problem is here
-        elif self.is_value_class_int_64():
-            # we can add an attribut named number_of_decimals in the memoryzone class
-            # maybe we wil get an error because this function is private
-            value = slave_instrument._generic_command(functioncode=3,
-                                                      registeraddress=self.start_registers_address,
-                                                      number_of_decimals=0,
-                                                      number_of_registers=4,
-                                                      signed=True,
-                                                      )
-        elif self.is_value_class_uint_64():
-            # we can add an attribut named number_of_decimals in the memoryzone class
-            value = slave_instrument._generic_command(functioncode=3,
-                                                      registeraddress=self.start_registers_address,
-                                                      number_of_decimals=0,
-                                                      number_of_registers=4,
-                                                      signed=False,
-                                                      )
+        # we can't read int 64 or uint 64 because it is impossible using the modbus protocole and it is module in python
+        # elif self.is_value_class_int_64():
+        #     value = value = slave_instrument.read_long(registeraddress=self.start_registers_address,
+        #                                                functioncode=3, signed=True)
+        #
+        # elif self.is_value_class_uint_64():
+        #     # we can add an attribut named number_of_decimals in the memoryzone class
+        #     value = slave_instrument.read_registers(registeraddress=self.start_registers_address,
+        #                                             number_of_decimals=0,
+        #                                             number_of_registers=4
+        #                                             )
 
         elif self.is_value_class_int_32():
             # we can add an attribut named number_of_decimals in the memoryzone class

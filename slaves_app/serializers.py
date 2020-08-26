@@ -14,7 +14,7 @@ class SettingSerializer(serializers.ModelSerializer):
 class MemoryZoneSerializer(serializers.ModelSerializer):
     class Meta:
         model = MemoryZone
-        fields = ('id', 'slave', 'start_registers_address', 'name', 'unit', 'value_class')
+        fields = ('id', 'slave', 'start_registers_address', 'name', 'unit', 'type_of_value')
         extra_kwargs = {
             'id': {'required': False, 'read_only': True}
         }

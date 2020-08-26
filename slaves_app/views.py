@@ -13,11 +13,7 @@ from rest_framework.response import Response
 from rest_framework.generics import get_object_or_404
 from rest_framework import serializers
 from rest_framework.filters import SearchFilter, OrderingFilter
-from . import my_one_lib
-
-## minimalmodbus
-
-import minimalmodbus
+from . import my_own_lib
 
 
 class SettingViewSet(viewsets.ModelViewSet):
@@ -50,7 +46,7 @@ class SlaveViewSet(viewsets.ModelViewSet):
 def salve_search(request):
     keyword = request.GET.get('search', '')
     queryset = Slave.get_slaves_with_name_or_mac_or_address_start_with(keyword=keyword)
-    queryset = my_one_lib.remove_redundancy_items_from_a_list(queryset=queryset)
+    queryset = my_own_lib.remove_redundancy_items_from_a_list(queryset=queryset)
     serializer = SlaveSerializer(queryset, many=True)
     list_memory_zone = []
     for slave in queryset:
