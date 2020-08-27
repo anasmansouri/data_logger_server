@@ -175,53 +175,36 @@ class MemoryZone(models.Model):
             value = slave_instrument.read_float(registeraddress=self.start_registers_address,
                                                 functioncode=3,
                                                 number_of_registers=4)
-        # we can't read int 64 or uint 64 because it is impossible using the modbus protocole and it is module in python
-        # elif self.is_value_class_int_64():
-        #     value = value = slave_instrument.read_long(registeraddress=self.start_registers_address,
-        #                                                functioncode=3, signed=True)
-        #
-        # elif self.is_value_class_uint_64():
-        #     # we can add an attribut named number_of_decimals in the memoryzone class
-        #     value = slave_instrument.read_registers(registeraddress=self.start_registers_address,
-        #                                             number_of_decimals=0,
-        #                                             number_of_registers=4
-        #                                             )
 
         elif self.is_value_class_int_32():
-            # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_long(registeraddress=self.start_registers_address,
                                                functioncode=3, signed=True)
             value = value / (10.0 ** self.number_of_decimals)
 
         elif self.is_value_class_uint_32():
-            # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_long(registeraddress=self.start_registers_address,
                                                functioncode=3, signed=False)
             value = value / (10.0 ** self.number_of_decimals)
 
         elif self.is_value_class_int_16():
-            # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_register(registeraddress=self.start_registers_address,
                                                    functioncode=3, signed=True,
                                                    number_of_decimals=self.number_of_decimals, )
 
         elif self.is_value_class_uint_16():
-            # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_register(registeraddress=self.start_registers_address,
                                                    functioncode=3, signed=False,
                                                    number_of_decimals=self.number_of_decimals, )
 
         elif self.is_value_class_string():
-            # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_string(registeraddress=self.start_registers_address,
                                                  number_of_registers=16,
                                                  functioncode=3)
 
         elif self.is_value_class_boolean():
-            # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_bit(registeraddress=self.start_registers_address, functioncode=2)
-            # instead of printing we have to create a new history object and save it
-        print(value)
+
+        MemoryZoneHistory.objects.create(memory_zone=self, value=value).save()
         return value
 
 
