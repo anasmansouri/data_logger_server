@@ -90,11 +90,12 @@ class MemoryZone(models.Model):
                              ('STRING', 'STRING'),
                              )
 
-    start_registers_address = models.IntegerField()
+    start_registers_address = models.IntegerField(blank=True, default=0)
     name = models.CharField(max_length=200, blank=False)
     unit = models.CharField(max_length=50, blank=False)
     type_of_value = models.CharField(max_length=15, default='INT16', verbose_name="type_of_value",
                                      choices=type_of_value_choices)
+    number_of_decimals = models.IntegerField()
     slave = models.ForeignKey(Slave, on_delete=models.CASCADE)
 
     class Meta:
@@ -169,6 +170,7 @@ class MemoryZone(models.Model):
             value = slave_instrument.read_float(registeraddress=self.start_registers_address,
                                                 functioncode=3,
                                                 number_of_registers=2)
+
         elif self.is_value_class_float_64():
             value = slave_instrument.read_float(registeraddress=self.start_registers_address,
                                                 functioncode=3,
@@ -189,23 +191,32 @@ class MemoryZone(models.Model):
             # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_long(registeraddress=self.start_registers_address,
                                                functioncode=3, signed=True)
+            value = value / (10.0 ** self.number_of_decimals)
+
         elif self.is_value_class_uint_32():
             # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_long(registeraddress=self.start_registers_address,
                                                functioncode=3, signed=False)
+            value = value / (10.0 ** self.number_of_decimals)
+
         elif self.is_value_class_int_16():
             # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_register(registeraddress=self.start_registers_address,
-                                                   functioncode=3, signed=True, number_of_decimals=0, )
+                                                   functioncode=3, signed=True,
+                                                   number_of_decimals=self.number_of_decimals, )
+
         elif self.is_value_class_uint_16():
             # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_register(registeraddress=self.start_registers_address,
-                                                   functioncode=3, signed=False, number_of_decimals=0, )
+                                                   functioncode=3, signed=False,
+                                                   number_of_decimals=self.number_of_decimals, )
+
         elif self.is_value_class_string():
             # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_string(registeraddress=self.start_registers_address,
                                                  number_of_registers=16,
                                                  functioncode=3)
+
         elif self.is_value_class_boolean():
             # we can add an attribut named number_of_decimals in the memoryzone class
             value = slave_instrument.read_bit(registeraddress=self.start_registers_address, functioncode=2)

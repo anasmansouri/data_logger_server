@@ -14,7 +14,7 @@ class SettingSerializer(serializers.ModelSerializer):
 class MemoryZoneSerializer(serializers.ModelSerializer):
     class Meta:
         model = MemoryZone
-        fields = ('id', 'slave', 'start_registers_address', 'name', 'unit', 'type_of_value')
+        fields = ('id', 'slave', 'start_registers_address', 'name', 'unit', 'type_of_value', 'number_of_decimals')
         extra_kwargs = {
             'id': {'required': False, 'read_only': True}
         }
@@ -51,10 +51,8 @@ class SlaveSerializer(serializers.ModelSerializer):
         slave, created = Slave.objects.update_or_create(setting=setting, **validated_data)
         slave.save()
 
-        # solved
-        # when we create the slave object the django use this serializer to return the json format to the client ,
-        # but this give us an error , because the sensor value type is not an attribute for the slave model
-        # how
-        # using the write_only=True on the sensor value type field , so we are not allowing the serializer to look for the se
-        # sensor value type to serialize it and add it to the json format of the slave .
+        # solved when we create the slave object the django use this serializer to return the json format to the
+        # client , but this give us an error , because the sensor value type is not an attribute for the slave model
+        # how using the write_only=True on the sensor value type field , so we are not allowing the serializer to
+        # look for the se sensor value type to serialize it and add it to the json format of the slave .
         return slave
