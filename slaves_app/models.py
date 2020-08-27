@@ -105,61 +105,61 @@ class MemoryZone(models.Model):
         return self.name
 
     def is_value_class_float_32(self):
-        if self.value_class == "FLOAT32":
+        if self.type_of_value == "FLOAT32":
             return True
         else:
             return False
 
     def is_value_class_float_64(self):
-        if self.value_class == "FLOAT64":
+        if self.type_of_value == "FLOAT64":
             return True
         else:
             return False
 
     def is_value_class_int_64(self):
-        if self.value_class == "INT64":
+        if self.type_of_value == "INT64":
             return True
         else:
             return False
 
     def is_value_class_uint_64(self):
-        if self.value_class == "UINT64":
+        if self.type_of_value == "UINT64":
             return True
         else:
             return False
 
     def is_value_class_int_32(self):
-        if self.value_class == "INT32":
+        if self.type_of_value == "INT32":
             return True
         else:
             return False
 
     def is_value_class_uint_32(self):
-        if self.value_class == "UINT":
+        if self.type_of_value == "UINT":
             return True
         else:
             return False
 
     def is_value_class_int_16(self):
-        if self.value_class == "INT16":
+        if self.type_of_value == "INT16":
             return True
         else:
             return False
 
     def is_value_class_uint_16(self):
-        if self.value_class == "UINT16":
+        if self.type_of_value == "UINT16":
             return True
         else:
             return False
 
     def is_value_class_string(self):
-        if self.value_class == "STRING":
+        if self.type_of_value == "STRING":
             return True
         else:
             return False
 
     def is_value_class_boolean(self):
-        if self.value_class == "BOOLEAN":
+        if self.type_of_value == "BOOLEAN":
             return True
         else:
             return False
