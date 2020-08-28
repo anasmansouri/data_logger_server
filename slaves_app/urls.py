@@ -10,6 +10,5 @@ router.register(r'MemoryZone', views.MemoryZoneViewSet, basename="Memory_Zone_li
 router.register(r'MemoryZoneHistory', views.MemoryZoneHistoryViewSet, basename="Memory_Zone_History_list")
 
 urlpatterns = [path('salve_search/', views.salve_search),
-               path('read_data/', views.read_data)
                ]
 urlpatterns += router.urls

@@ -40,7 +40,6 @@ class SlaveViewSet(viewsets.ModelViewSet):
 
 # to serach items using the name or the mac address or the slave address .
 # the return type is list of slaves in json format
-# TODO you have to try to remove the slave attributes in the json return of this function
 @api_view(['GET'])
 @transaction.atomic
 def salve_search(request):
@@ -58,13 +57,3 @@ def salve_search(request):
     for i in range(0, len(data)):
         data[i]["memory_zone"] = list_memory_zone_json[i].data
     return Response(data)
-
-
-######################################
-
-@api_view(["GET"])
-@transaction.atomic
-def read_data(request):
-    enabled_slaves = Slave.get_enabled_slaves()
-    read_sensors_values(enabled_slaves)
-    return Response({"data", "koulchi naadi"})

@@ -1,0 +1,319 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0 185676  6272 ?        Ss   14:26   0:04 /sbin/init splash
+root         2  0.0  0.0      0     0 ?        S    14:26   0:00 [kthreadd]
+root         4  0.0  0.0      0     0 ?        I<   14:26   0:00 [kworker/0:0H]
+root         6  0.0  0.0      0     0 ?        I<   14:26   0:00 [mm_percpu_wq]
+root         7  0.0  0.0      0     0 ?        S    14:26   0:00 [ksoftirqd/0]
+root         8  0.0  0.0      0     0 ?        I    14:26   0:07 [rcu_sched]
+root         9  0.0  0.0      0     0 ?        I    14:26   0:00 [rcu_bh]
+root        10  0.0  0.0      0     0 ?        S    14:26   0:00 [migration/0]
+root        11  0.0  0.0      0     0 ?        S    14:26   0:00 [watchdog/0]
+root        12  0.0  0.0      0     0 ?        S    14:26   0:00 [cpuhp/0]
+root        13  0.0  0.0      0     0 ?        S    14:26   0:00 [cpuhp/1]
+root        14  0.0  0.0      0     0 ?        S    14:26   0:00 [watchdog/1]
+root        15  0.0  0.0      0     0 ?        S    14:26   0:00 [migration/1]
+root        16  0.0  0.0      0     0 ?        S    14:26   0:00 [ksoftirqd/1]
+root        18  0.0  0.0      0     0 ?        I<   14:26   0:00 [kworker/1:0H]
+root        19  0.0  0.0      0     0 ?        S    14:26   0:00 [cpuhp/2]
+root        20  0.0  0.0      0     0 ?        S    14:26   0:00 [watchdog/2]
+root        21  0.0  0.0      0     0 ?        S    14:26   0:00 [migration/2]
+root        22  0.0  0.0      0     0 ?        S    14:26   0:00 [ksoftirqd/2]
+root        24  0.0  0.0      0     0 ?        I<   14:26   0:00 [kworker/2:0H]
+root        25  0.0  0.0      0     0 ?        S    14:26   0:00 [cpuhp/3]
+root        26  0.0  0.0      0     0 ?        S    14:26   0:00 [watchdog/3]
+root        27  0.0  0.0      0     0 ?        S    14:26   0:00 [migration/3]
+root        28  0.0  0.0      0     0 ?        S    14:26   0:00 [ksoftirqd/3]
+root        30  0.0  0.0      0     0 ?        I<   14:26   0:00 [kworker/3:0H]
+root        31  0.0  0.0      0     0 ?        S    14:26   0:00 [kdevtmpfs]
+root        32  0.0  0.0      0     0 ?        I<   14:26   0:00 [netns]
+root        33  0.0  0.0      0     0 ?        S    14:26   0:00 [rcu_tasks_kthre]
+root        34  0.0  0.0      0     0 ?        S    14:26   0:00 [kauditd]
+root        37  0.0  0.0      0     0 ?        S    14:26   0:00 [khungtaskd]
+root        38  0.0  0.0      0     0 ?        S    14:26   0:00 [oom_reaper]
+root        39  0.0  0.0      0     0 ?        I<   14:26   0:00 [writeback]
+root        40  0.0  0.0      0     0 ?        S    14:26   0:00 [kcompactd0]
+root        41  0.0  0.0      0     0 ?        SN   14:26   0:00 [ksmd]
+root        42  0.0  0.0      0     0 ?        SN   14:26   0:00 [khugepaged]
+root        43  0.0  0.0      0     0 ?        I<   14:26   0:00 [crypto]
+root        44  0.0  0.0      0     0 ?        I<   14:26   0:00 [kintegrityd]
+root        45  0.0  0.0      0     0 ?        I<   14:26   0:00 [kblockd]
+root        48  0.0  0.0      0     0 ?        I<   14:26   0:00 [ata_sff]
+root        50  0.0  0.0      0     0 ?        I<   14:26   0:00 [md]
+root        51  0.0  0.0      0     0 ?        I<   14:26   0:00 [edac-poller]
+root        52  0.0  0.0      0     0 ?        I<   14:26   0:00 [devfreq_wq]
+root        53  0.0  0.0      0     0 ?        I<   14:26   0:00 [watchdogd]
+root        56  0.0  0.0      0     0 ?        S    14:26   0:03 [kswapd0]
+root        57  0.0  0.0      0     0 ?        I<   14:26   0:00 [kworker/u17:0]
+root        58  0.0  0.0      0     0 ?        S    14:26   0:00 [ecryptfs-kthrea]
+root       100  0.0  0.0      0     0 ?        I<   14:26   0:00 [kthrotld]
+root       101  0.0  0.0      0     0 ?        I<   14:26   0:00 [acpi_thermal_pm]
+root       105  0.0  0.0      0     0 ?        I<   14:26   0:00 [ipv6_addrconf]
+root       115  0.0  0.0      0     0 ?        I<   14:26   0:00 [kstrp]
+root       135  0.0  0.0      0     0 ?        I<   14:26   0:00 [charger_manager]
+root       185  0.0  0.0      0     0 ?        S    14:26   0:00 [scsi_eh_0]
+root       186  0.0  0.0      0     0 ?        I<   14:26   0:00 [scsi_tmf_0]
+root       187  0.0  0.0      0     0 ?        S    14:26   0:00 [scsi_eh_1]
+root       188  0.0  0.0      0     0 ?        I<   14:26   0:00 [scsi_tmf_1]
+root       194  0.0  0.0      0     0 ?        I<   14:26   0:00 [e1000e]
+root       195  0.0  0.0      0     0 ?        S    14:26   0:02 [i915/signal:0]
+root       196  0.0  0.0      0     0 ?        S    14:26   0:00 [i915/signal:1]
+root       197  0.0  0.0      0     0 ?        S    14:26   0:00 [i915/signal:2]
+root       198  0.0  0.0      0     0 ?        S    14:26   0:00 [i915/signal:4]
+root       244  0.0  0.0      0     0 ?        I<   14:26   0:02 [kworker/1:1H]
+root       293  0.0  0.0      0     0 ?        I<   14:26   0:00 [kworker/3:1H]
+root       295  0.0  0.0      0     0 ?        S    14:26   0:01 [jbd2/sda1-8]
+root       296  0.0  0.0      0     0 ?        I<   14:26   0:00 [ext4-rsv-conver]
+root       328  0.0  0.0      0     0 ?        I<   14:26   0:00 [kworker/2:1H]
+root       341  0.0  0.0  35452  5792 ?        Ss   14:26   0:00 /lib/systemd/systemd-journald
+root       349  0.0  0.0      0     0 ?        I<   14:26   0:00 [kworker/0:1H]
+root       388  0.1  0.0  46900  5208 ?        Ss   14:26   0:13 /lib/systemd/systemd-udevd
+root       408  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop0]
+root       409  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop1]
+root       412  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop2]
+root       415  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop3]
+root       416  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop4]
+root       417  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop5]
+root       418  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop6]
+root       419  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop7]
+root       420  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop8]
+root       432  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop11]
+root       438  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop12]
+root       439  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop13]
+root       441  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop15]
+root       445  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop16]
+root       455  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop17]
+root       459  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop18]
+root       476  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop20]
+root       477  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop21]
+root       481  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop22]
+root       484  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop24]
+root       489  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop26]
+root       491  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop27]
+root       495  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop28]
+root       496  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop29]
+root       499  0.0  0.0      0     0 ?        S<   14:26   0:00 [loop30]
+root       656  0.0  0.0      0     0 ?        S    14:26   0:00 [irq/50-mei_me]
+systemd+   658  0.0  0.0 102384  2272 ?        Ssl  14:26   0:00 /lib/systemd/systemd-timesyncd
+root       710  0.0  0.0      0     0 ?        I<   14:26   0:00 [cfg80211]
+root       792  0.1  0.0      0     0 ?        S    14:26   0:16 [irq/51-iwlwifi]
+root       793  0.0  0.0      0     0 ?        I<   14:26   0:00 [kmemstick]
+root       799  0.0  0.0      0     0 ?        I<   14:26   0:00 [kworker/u17:1]
+message+  1206  0.0  0.0  44396  4344 ?        Ss   14:27   0:05 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+root      1240  0.0  0.0  31956  3740 ?        Ss   14:27   0:00 /usr/lib/bluetooth/bluetoothd
+root      1242  0.0  0.0 166440  8008 ?        Ssl  14:27   0:00 /usr/sbin/thermald --no-daemon --dbus-enable
+root      1258  0.0  0.1 449796 15964 ?        Ssl  14:27   0:04 /usr/sbin/NetworkManager --no-daemon
+root      1260  0.0  0.0  93284  6516 ?        Ss   14:27   0:00 /usr/sbin/cupsd -l
+root      1308  0.3  0.2 942000 33808 ?        Ssl  14:27   0:36 /usr/lib/snapd/snapd
+root      1324  0.0  0.0   4396  1300 ?        Ss   14:27   0:01 /usr/sbin/acpid
+root      1330  0.0  0.0  29396  3668 ?        Ss   14:27   0:00 /lib/systemd/systemd-logind
+avahi     1336  0.0  0.0  44908  2968 ?        Ss   14:27   0:00 avahi-daemon: running [anas-HP-EliteBook-840-G1.local]
+root      1343  0.0  0.0 276004  5872 ?        Ssl  14:27   0:00 /usr/lib/accountsservice/accounts-daemon
+syslog    1349  0.0  0.0 256392  3248 ?        Ssl  14:27   0:00 /usr/sbin/rsyslogd -n
+root      1393  0.0  0.0  29012  2592 ?        Ss   14:27   0:00 /usr/sbin/cron -f
+avahi     1462  0.0  0.0  44784   324 ?        S    14:27   0:00 avahi-daemon: chroot helper
+root      1510  0.0  0.0 274816  8836 ?        Ssl  14:27   0:00 /usr/sbin/cups-browsed
+root      1519  0.0  0.0  19596   268 ?        Ss   14:27   0:00 /usr/sbin/irqbalance --pid=/var/run/irqbalance.pid
+root      1595  0.0  0.0 281840  7644 ?        Ssl  14:27   0:00 /usr/lib/policykit-1/polkitd --no-debug
+root      1651  0.0  0.0 276676  5856 ?        SLsl 14:27   0:00 /usr/sbin/lightdm
+rabbitmq  1690  0.0  0.0   4504   636 ?        Ss   14:27   0:00 /bin/sh /usr/sbin/rabbitmq-server
+root      1696  0.0  0.1 174540 18248 ?        Ssl  14:27   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root      1732  2.4  1.1 533924 134872 tty7    Ssl+ 14:27   4:58 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+root      1764  0.0  0.3 651184 36768 ?        Ssl  14:27   0:03 /usr/bin/containerd
+postgres  1805  0.0  0.2 294704 24088 ?        S    14:27   0:00 /usr/lib/postgresql/9.5/bin/postgres -D /var/lib/postgresql/9.5/main -c config_file=/etc/postgresql/9.5/main/postgresql.conf
+rabbitmq  1813  0.0  0.0   4504  1552 ?        S    14:27   0:00 /bin/sh -e /usr/lib/rabbitmq/bin/rabbitmq-server
+lp        1850  0.0  0.0  81244  5028 ?        S    14:27   0:00 /usr/lib/cups/notifier/dbus dbus://
+lp        1852  0.0  0.0  81244  5036 ?        S    14:27   0:00 /usr/lib/cups/notifier/dbus dbus://
+lp        1854  0.0  0.0  81244  5088 ?        S    14:27   0:00 /usr/lib/cups/notifier/dbus dbus://
+root      1948  0.0  0.0  65512  4932 ?        Ss   14:27   0:00 /usr/sbin/sshd -D
+mysql     1957  0.0  1.2 1247908 149528 ?      Ssl  14:27   0:08 /usr/sbin/mysqld
+rabbitmq  1972  0.0  0.0  26304    32 ?        S    14:27   0:00 /usr/lib/erlang/erts-7.3/bin/epmd -daemon
+www-data  1981  0.0  0.0  49824  3520 ?        Ss   14:27   0:00 /usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf
+rabbitmq  2235  0.4  0.3 2190556 46784 ?       Sl   14:27   0:58 /usr/lib/erlang/erts-7.3/bin/beam.smp -W w -A 64 -P 1048576 -K true -B i -- -root /usr/lib/erlang -progname erl -- -home /var/lib/rabbitmq -- -pa /usr/lib/rabbitmq/lib/rabbitmq_server-3.5.7/sbin/../ebin -noshell -noinput -s rabbit boot -sname rabbit@anas-HP-EliteBook-840-G1 -boot start_sasl -kernel inet_default_connect_options [{nodelay,true}] -sasl errlog_type error -sasl sasl_error_logger false -rabbit error_logger {file,"/var/log/rabbitmq/rabbit@anas-HP-EliteBook-840-G1.log"} -rabbit sasl_error_logger {file,"/var/log/rabbitmq/rabbit@anas-HP-EliteBook-840-G1-sasl.log"} -rabbit enabled_plugins_file "/etc/rabbitmq/enabled_plugins" -rabbit plugins_dir "/usr/lib/rabbitmq/lib/rabbitmq_server-3.5.7/sbin/../plugins" -rabbit plugins_expand_dir "/var/lib/rabbitmq/mnesia/rabbit@anas-HP-EliteBook-840-G1-plugins-expand" -os_mon start_cpu_sup false -os_mon start_disksup false -os_mon start_memsup false -mnesia dir "/var/lib/rabbitmq/mnesia/rabbit@anas-HP-EliteBook-840-G1" -kernel inet_dist_listen_min 25672 -kernel inet_dist_listen_max 25672
+root      2753  0.0  0.0  44036  6864 ?        Ss   14:27   0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+postgres  2800  0.0  0.0 294704  4020 ?        Ss   14:27   0:00 postgres: checkpointer process   
+postgres  2801  0.0  0.0 294704  5376 ?        Ss   14:27   0:00 postgres: writer process   
+postgres  2802  0.0  0.0 294704  4020 ?        Ss   14:27   0:00 postgres: wal writer process   
+postgres  2803  0.0  0.0 295004  6536 ?        Ss   14:27   0:00 postgres: autovacuum launcher process   
+postgres  2804  0.0  0.0 149688  3088 ?        Ss   14:27   0:00 postgres: stats collector process   
+whoopsie  2904  0.0  0.1 373968 11712 ?        Ssl  14:27   0:00 /usr/bin/whoopsie -f
+root      2909  0.0  0.5 700368 66744 ?        Ssl  14:27   0:05 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root      2937  0.0  0.0  15940  1544 tty1     Ss+  14:27   0:00 /sbin/agetty --noclear tty1 linux
+rabbitmq  3171  0.0  0.0   7504   876 ?        Ss   14:27   0:00 inet_gethost 4
+rabbitmq  3172  0.0  0.0   9624  1456 ?        S    14:27   0:00 inet_gethost 4
+root      3173  0.0  0.0 230304  5976 ?        Sl   14:27   0:00 lightdm --session-child 12 19
+rtkit     3447  0.0  0.0 183544  2484 ?        SNsl 14:27   0:00 /usr/lib/rtkit/rtkit-daemon
+root      3672  0.0  0.0 347488  9716 ?        Ssl  14:27   0:00 /usr/lib/upower/upowerd
+root      3732  0.0  0.0      0     0 ?        S<   14:27   0:00 [krfcommd]
+root      3734  0.0  0.0  65408  4220 ?        Ss   14:27   0:00 /usr/lib/postfix/sbin/master
+colord    3763  0.0  0.0 301248  9740 ?        Ssl  14:27   0:00 /usr/lib/colord/colord
+anas      3861  0.0  0.0  45452  4888 ?        Ss   14:28   0:00 /lib/systemd/systemd --user
+anas      3862  0.0  0.0 211220  2420 ?        S    14:28   0:00 (sd-pam)
+anas      3869  0.0  0.0 279040  7412 ?        Sl   14:28   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+anas      3885  0.0  0.0  46480  3856 ?        Ss   14:28   0:00 /sbin/upstart --user
+root      3893  0.0  0.0  16132  3572 ?        S    14:28   0:00 /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /var/run/dhclient-wlo1.pid -lf /var/lib/NetworkManager/dhclient-55e889bc-751b-4624-95ab-780256eb7196-wlo1.lease -cf /var/lib/NetworkManager/dhclient-wlo1.conf wlo1
+nobody    3908  0.0  0.0  52868  3276 ?        S    14:28   0:01 /usr/sbin/dnsmasq --no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/var/run/NetworkManager/dnsmasq.pid --listen-address=127.0.1.1 --cache-size=0 --conf-file=/dev/null --proxy-dnssec --enable-dbus=org.freedesktop.NetworkManager.dnsmasq --conf-dir=/etc/NetworkManager/dnsmasq.d
+postfix   4001  0.0  0.0  67524  4324 ?        S    14:28   0:00 qmgr -l -t unix -u
+anas      4106  0.0  0.0  32864  2036 ?        S    14:28   0:00 upstart-udev-bridge --daemon --user
+anas      4113  0.0  0.0  45016  5368 ?        Ss   14:28   0:03 dbus-daemon --fork --session --address=unix:abstract=/tmp/dbus-7EkV0QeWDm
+anas      4125  0.0  0.0  86352  9500 ?        Ss   14:28   0:00 /usr/lib/x86_64-linux-gnu/hud/window-stack-bridge
+anas      4146  0.0  0.0  32796   288 ?        S    14:28   0:01 upstart-dbus-bridge --daemon --system --user --bus-name system
+anas      4148  0.0  0.0  32796  1364 ?        S    14:28   0:00 upstart-dbus-bridge --daemon --session --user --bus-name session
+anas      4162  0.0  0.0  41288  1856 ?        S    14:28   0:00 upstart-file-bridge --daemon --user
+anas      4168  0.1  0.0 347468  9128 ?        Ssl  14:28   0:18 /usr/bin/ibus-daemon --daemonize --xim --address unix:tmpdir=/tmp/ibus
+anas      4177  0.0  0.0 274540  6232 ?        Sl   14:28   0:00 /usr/lib/gvfs/gvfsd
+anas      4182  0.0  0.0 406864  4832 ?        Sl   14:28   0:00 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+anas      4191  0.0  0.0 264268  5856 ?        Sl   14:28   0:00 /usr/lib/ibus/ibus-dconf
+anas      4192  0.0  0.2 478880 27552 ?        Sl   14:28   0:05 /usr/lib/ibus/ibus-ui-gtk3
+anas      4194  0.0  0.1 427624 20260 ?        Sl   14:28   0:04 /usr/lib/ibus/ibus-x11 --kill-daemon
+anas      4213  0.0  0.2 527260 29140 ?        Ssl  14:28   0:06 /usr/lib/x86_64-linux-gnu/bamf/bamfdaemon
+anas      4218  0.0  0.0 188392  5012 ?        Sl   14:28   0:04 /usr/lib/ibus/ibus-engine-simple
+anas      4223  0.0  0.0 166540   676 ?        Ss   14:28   0:00 gpg-agent --homedir /home/anas/.gnupg --use-standard-socket --daemon
+anas      4234  0.0  0.3 653704 39156 ?        Ssl  14:28   0:02 /usr/lib/x86_64-linux-gnu/hud/hud-service
+anas      4236  0.0  0.2 1059940 30404 ?       Ssl  14:28   0:01 /usr/lib/unity-settings-daemon/unity-settings-daemon
+anas      4240  0.0  0.0 338008  5564 ?        Ssl  14:28   0:00 /usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately
+anas      4242  0.0  0.1 566876 14248 ?        Ssl  14:28   0:00 /usr/lib/gnome-session/gnome-session-binary --session=ubuntu
+anas      4251  0.0  0.0  43020  3112 ?        S    14:28   0:00 /usr/bin/dbus-daemon --config-file=/etc/at-spi2/accessibility.conf --nofork --print-address 3
+anas      4261  0.0  0.3 648912 42232 ?        Ssl  14:28   0:06 /usr/lib/x86_64-linux-gnu/unity/unity-panel-service
+anas      4265  0.0  0.0 206864  5644 ?        Sl   14:28   0:02 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+anas      4290  0.0  0.0 354400  6356 ?        Ssl  14:28   0:00 /usr/lib/x86_64-linux-gnu/indicator-messages/indicator-messages-service
+anas      4291  0.0  0.0 407124  5272 ?        Ssl  14:28   0:00 /usr/lib/x86_64-linux-gnu/indicator-bluetooth/indicator-bluetooth-service
+anas      4292  0.0  0.0 438644  9216 ?        Ssl  14:28   0:00 /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
+anas      4295  0.0  0.1 1233460 16396 ?       Ssl  14:28   0:00 /usr/lib/x86_64-linux-gnu/indicator-datetime/indicator-datetime-service
+anas      4299  0.0  0.2 722888 24932 ?        Ssl  14:28   0:00 /usr/lib/x86_64-linux-gnu/indicator-keyboard/indicator-keyboard-service --use-gtk
+anas      4302  0.0  0.0 661564  9240 ?        Ssl  14:28   0:00 /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-sound-service
+anas      4304  0.0  0.1 547408 22520 ?        Ssl  14:28   0:00 /usr/lib/x86_64-linux-gnu/indicator-printers/indicator-printers-service
+anas      4307  0.0  0.0 887348  6264 ?        Ssl  14:28   0:00 /usr/lib/x86_64-linux-gnu/indicator-session/indicator-session-service
+anas      4315  0.0  0.1 476908 12216 ?        Ssl  14:28   0:00 /usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service
+anas      4335  0.0  0.2 504168 28912 ?        Sl   14:28   0:01 /usr/bin/gnome-screensaver --no-daemon
+anas      4344  5.0  0.1 716984 22156 ?        R<l  14:28  10:11 /usr/bin/pulseaudio --start --log-target=syslog
+anas      4360  0.0  0.0 178796  4876 ?        Sl   14:28   0:00 /usr/lib/dconf/dconf-service
+anas      4370  0.0  0.0  22368   928 ?        S    14:28   0:00 syndaemon -i 1.0 -t -K -R
+anas      4373  0.0  0.1 1111824 22764 ?       Sl   14:28   0:00 /usr/lib/evolution/evolution-source-registry
+anas      4589  0.0  0.1 429324 19504 ?        Sl   14:28   0:00 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+anas      4593  0.0  0.4 621180 54216 ?        Sl   14:28   0:06 /usr/bin/python3 /usr/bin/onboard --not-show-in=GNOME,GNOME-Classic:GNOME
+anas      4594  0.0  0.4 1358568 55064 ?       Sl   14:28   0:04 nautilus -n
+anas      4600  0.0  0.8 1749092 98676 ?       SLl  14:28   0:04 /usr/bin/gnome-software --gapplication-service
+anas      4601  0.0  0.1 576828 19520 ?        Sl   14:28   0:00 /usr/lib/unity-settings-daemon/unity-fallback-mount-helper
+anas      4602  0.0  0.2 738324 31796 ?        Sl   14:28   0:04 nm-applet
+anas      4620  0.0  0.0 285456  6908 ?        Sl   14:28   0:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+root      4624  0.0  0.0 433712  8836 ?        Ssl  14:28   0:01 /usr/lib/udisks2/udisksd --no-debug
+anas      4649  2.0  2.1 1765928 256580 ?      Rsl  14:28   4:11 compiz
+anas      4655  0.0  0.0 257540  5080 ?        Sl   14:28   0:00 /usr/lib/gvfs/gvfs-goa-volume-monitor
+anas      4660  0.0  0.0 403612  8328 ?        Sl   14:28   0:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+anas      4666  0.0  0.0 259528  4120 ?        Sl   14:28   0:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+anas      4671  0.0  0.0 271856  5640 ?        Sl   14:28   0:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+anas      4693  0.0  0.5 862908 58604 ?        Sl   14:28   0:00 /usr/lib/evolution/evolution-calendar-factory
+anas      4705  0.0  0.0 350684  5856 ?        Sl   14:28   0:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.4 /org/gtk/gvfs/exec_spaw/0
+root      4711  0.0  0.2 504772 31944 ?        Ssl  14:28   0:00 /usr/lib/x86_64-linux-gnu/fwupd/fwupd
+anas      4792  0.0  0.4 815864 49012 ?        Sl   14:28   0:00 /usr/lib/evolution/evolution-calendar-factory-subprocess --factory contacts --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.Calendarx4693x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/Calendar/4693/2
+anas      4802  0.0  0.1 690576 17636 ?        Sl   14:28   0:00 /usr/lib/evolution/evolution-addressbook-factory
+anas      4804  0.0  0.4 865644 48608 ?        Sl   14:28   0:00 /usr/lib/evolution/evolution-calendar-factory-subprocess --factory local --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.Calendarx4693x3 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/Calendar/4693/3
+anas      4824  0.0  0.1 766080 16792 ?        Sl   14:28   0:00 /usr/lib/evolution/evolution-addressbook-factory-subprocess --factory local --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.AddressBookx4802x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/AddressBook/4802/2
+anas      4841  0.0  0.0 186772  5552 ?        Sl   14:28   0:00 /usr/lib/gvfs/gvfsd-metadata
+anas      4873  0.0  0.0   4504   848 ?        S    14:28   0:00 /bin/sh -c /usr/lib/x86_64-linux-gnu/zeitgeist/zeitgeist-maybe-vacuum; /usr/bin/zeitgeist-daemon
+anas      4877  0.0  0.0 410340  7580 ?        Sl   14:28   0:00 /usr/bin/zeitgeist-daemon
+anas      4884  0.0  0.2 326864 25296 ?        Sl   14:28   0:00 /usr/lib/x86_64-linux-gnu/zeitgeist-fts
+anas      4886  0.0  0.1 445036 16128 ?        Sl   14:28   0:00 zeitgeist-datahub
+root      5038  0.0  0.0      0     0 ?        S<   14:28   0:00 [loop31]
+root      5153  0.0  0.0      0     0 ?        S<   14:28   0:00 [loop32]
+root      5501  0.0  0.0      0     0 ?        S<   14:29   0:00 [loop9]
+anas      5507  0.0  0.1 524968 22552 ?        Sl   14:29   0:00 update-notifier
+anas      5518  0.0  0.1 645188 16668 ?        Sl   14:29   0:00 /usr/lib/x86_64-linux-gnu/unity-scope-home/unity-scope-home
+anas      5531  0.0  0.2 651228 25384 ?        Sl   14:29   0:00 /usr/bin/unity-scope-loader applications/applications.scope applications/scopes.scope commands.scope
+anas      5533  0.0  0.1 581596 13356 ?        Sl   14:29   0:00 /usr/lib/x86_64-linux-gnu/unity-lens-files/unity-files-daemon
+anas      5566  9.8  3.6 3597204 427612 ?      Rl   14:29  19:40 /snap/firefox/400/firefox
+anas      5585  0.0  0.0 479024  5068 ?        Sl   14:29   0:00 /usr/libexec/xdg-document-portal
+anas      5597  0.0  0.0 259764  5060 ?        Sl   14:29   0:00 /usr/libexec/xdg-permission-store
+anas      5742  0.0  0.1 333684 13460 ?        Sl   14:29   0:00 /usr/lib/x86_64-linux-gnu/unity-lens-music/unity-music-daemon
+anas      5749  0.0  0.0   4504  1600 ?        S    14:29   0:00 /bin/sh /snap/pycharm-community/207/bin/pycharm.sh
+anas      5824  6.6  8.3 5551568 981136 ?      Sl   14:29  13:18 /snap/pycharm-community/207/jbr/bin/java -classpath /snap/pycharm-community/207/lib/bootstrap.jar:/snap/pycharm-community/207/lib/extensions.jar:/snap/pycharm-community/207/lib/util.jar:/snap/pycharm-community/207/lib/jdom.jar:/snap/pycharm-community/207/lib/log4j.jar:/snap/pycharm-community/207/lib/trove4j.jar:/snap/pycharm-community/207/lib/jna.jar -Xms128m -Xmx1429m -XX:ReservedCodeCacheSize=240m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -XX:CICompilerCount=2 -Dsun.io.useCanonPrefixCache=false -Djava.net.preferIPv4Stack=true -Djdk.http.auth.tunneling.disabledSchemes="" -XX:+HeapDumpOnOutOfMemoryError -XX:-OmitStackTraceInFastThrow -Djdk.attach.allowAttachSelf=true -Dkotlinx.coroutines.debug=off -Djdk.module.illegalAccess.silent=true -Dawt.useSystemAAFontSettings=lcd -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine -Dsun.tools.attach.tmp.only=true -XX:ErrorFile=/home/anas/java_error_in_PYCHARM_%p.log -XX:HeapDumpPath=/home/anas/java_error_in_PYCHARM.hprof -Didea.vendor.name=JetBrains -Didea.paths.selector=PyCharmCE2020.2 -Djb.vmOptionsFile=/home/anas/.config/JetBrains/PyCharmCE2020.2/pycharm64.vmoptions -Didea.platform.prefix=PyCharmCore com.intellij.idea.Main
+anas      5991  0.0  0.1 226200 19112 ?        Sl   14:30   0:00 /usr/bin/snap userd
+anas      6025  1.9  2.2 9315264 265740 ?      Sl   14:30   3:58 /snap/firefox/400/firefox-bin -contentproc -childID 3 -isForBrowser -prefsLen 5983 -prefMapSize 190851 -parentBuildID 20200720181548 -greomni /snap/firefox/400/omni.ja -appomni /snap/firefox/400/browser/omni.ja -appdir /snap/firefox/400/browser 5566 true tab
+anas      6103  0.0  0.0 435456  6748 ?        Sl   14:30   0:00 /usr/lib/x86_64-linux-gnu/deja-dup/deja-dup-monitor
+anas      7029  0.0  0.3 504360 38572 ?        Sl   14:31   0:04 /usr/lib/x86_64-linux-gnu/notify-osd
+anas      7058  0.0  0.0   5404  2272 ?        S    14:31   0:00 /snap/pycharm-community/207/bin/fsnotifier64
+anas      7364  0.0  0.0  23852  6348 pts/4    Ss   14:31   0:01 /bin/bash --rcfile /snap/pycharm-community/207/plugins/terminal/jediterm-bash.in -i
+root      7415  0.0  0.0      0     0 ?        S<   14:31   0:00 [loop14]
+root      7686  0.0  0.0      0     0 ?        S<   14:33   0:00 [loop19]
+anas      7829  1.1  0.2 534144 29952 ?        Sl   14:33   2:14 /snap/firefox/400/firefox-bin -contentproc -parentBuildID 20200720181548 -prefsLen 7182 -prefMapSize 190851 -greomni /snap/firefox/400/omni.ja -appomni /snap/firefox/400/browser/omni.ja -appdir /snap/firefox/400/browser 5566 true rdd
+root      7949  0.0  0.0      0     0 ?        S<   14:33   0:00 [loop25]
+anas      8421  5.4  1.6 2854544 189644 ?      Sl   14:41  10:16 /snap/firefox/400/firefox-bin -contentproc -childID 6 -isForBrowser -prefsLen 7182 -prefMapSize 190851 -parentBuildID 20200720181548 -greomni /snap/firefox/400/omni.ja -appomni /snap/firefox/400/browser/omni.ja -appdir /snap/firefox/400/browser 5566 true tab
+anas      9021  2.2  4.6 3405228 539360 ?      Sl   14:51   4:03 /snap/firefox/400/firefox-bin -contentproc -childID 8 -isForBrowser -prefsLen 7182 -prefMapSize 190851 -parentBuildID 20200720181548 -greomni /snap/firefox/400/omni.ja -appomni /snap/firefox/400/browser/omni.ja -appdir /snap/firefox/400/browser 5566 true tab
+anas      9520  0.0  0.0 352944  6504 ?        Sl   14:59   0:00 /usr/lib/gvfs/gvfsd-network --spawner :1.4 /org/gtk/gvfs/exec_spaw/1
+anas      9592  0.0  0.0 361720  6012 ?        Sl   14:59   0:00 /usr/lib/gvfs/gvfsd-dnssd --spawner :1.4 /org/gtk/gvfs/exec_spaw/5
+anas     10378  0.0  0.0  14528  6144 ?        S    15:14   0:00 /snap/postman/123/usr/share/Postman/Postman
+anas     10593  0.0  0.0   8636   100 ?        S    15:14   0:00 sh -c "/snap/postman/123/usr/share/Postman/_Postman"  --no-sandbox
+anas     10594  0.7  1.5 872800 184752 ?       Sl   15:14   1:09 /snap/postman/123/usr/share/Postman/_Postman --no-sandbox
+anas     10596  0.0  0.3 378512 39364 ?        S    15:14   0:00 /snap/postman/123/usr/share/Postman/_Postman --type=zygote --no-sandbox
+anas     10638  0.0  0.6 446804 80816 ?        Sl   15:15   0:06 /snap/postman/123/usr/share/Postman/_Postman --type=gpu-process --field-trial-handle=12537441492741722834,56327400814200235,131072 --disable-features=SpareRendererForSitePerProcess --no-sandbox --gpu-preferences=KAAAAAAAAAAgAAAgAAAAAAAAYAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA --use-gl=swiftshader-webgl --service-request-channel-token=9343593313840495331
+anas     10645  0.0  0.5 445900 61756 ?        Sl   15:15   0:00 /snap/postman/123/usr/share/Postman/_Postman --type=utility --field-trial-handle=12537441492741722834,56327400814200235,131072 --disable-features=SpareRendererForSitePerProcess --lang=en-US --service-sandbox-type=network --no-sandbox --service-request-channel-token=2474237980096632764 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+anas     10655  0.0  0.8 684812 105276 ?       Sl   15:15   0:02 /snap/postman/123/usr/share/Postman/_Postman --type=renderer --no-sandbox --field-trial-handle=12537441492741722834,56327400814200235,131072 --disable-features=SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --app-path=/snap/postman/123/usr/share/Postman/resources/app --node-integration --webview-tag --no-sandbox --no-zygote --background-color=#E8E0CB --enable-websql --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=12145099176613188635 --renderer-client-id=8 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+anas     10685  0.2  1.4 870748 175320 ?       Sl   15:15   0:26 /snap/postman/123/usr/share/Postman/_Postman --type=renderer --no-sandbox --field-trial-handle=12537441492741722834,56327400814200235,131072 --disable-features=SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --app-path=/snap/postman/123/usr/share/Postman/resources/app --node-integration --webview-tag --no-sandbox --no-zygote --background-color=#fff --guest-instance-id=3 --enable-blink-features --disable-blink-features --enable-websql --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=9999962781868249259 --renderer-client-id=10 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+anas     10736  0.0  0.9 689932 113624 ?       Sl   15:15   0:08 /snap/postman/123/usr/share/Postman/_Postman --type=renderer --no-sandbox --field-trial-handle=12537441492741722834,56327400814200235,131072 --disable-features=SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --app-path=/snap/postman/123/usr/share/Postman/resources/app --node-integration --webview-tag --no-sandbox --no-zygote --background-color=#E8E0CB --enable-websql --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=6882882942219817039 --renderer-client-id=12 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+anas     10753  0.6  2.3 1004820 280400 ?      Sl   15:15   0:56 /snap/postman/123/usr/share/Postman/_Postman --type=renderer --no-sandbox --field-trial-handle=12537441492741722834,56327400814200235,131072 --disable-features=SpareRendererForSitePerProcess --disable-gpu-compositing --lang=en-US --app-path=/snap/postman/123/usr/share/Postman/resources/app --node-integration --webview-tag --no-sandbox --no-zygote --background-color=#fff --guest-instance-id=5 --enable-blink-features --disable-blink-features --enable-websql --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=6681339835737541175 --renderer-client-id=14 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+anas     13958  1.3  2.7 3081776 320092 ?      Sl   16:05   1:25 /snap/spotify/41/usr/share/spotify/spotify
+anas     14068  0.0  0.5 556400 62444 ?        S    16:05   0:00 /snap/spotify/41/usr/share/spotify/spotify --type=zygote --no-sandbox --log-file=/snap/spotify/41/usr/share/spotify/debug.log --log-severity=disable --product-version=Spotify/1.1.26.501 --lang=en
+anas     14089  0.0  0.7 1215528 87552 ?       Sl   16:05   0:01 /snap/spotify/41/usr/share/spotify/spotify --type=utility --field-trial-handle=3355503710480226164,12992793315471644132,131072 --disable-features=MimeHandlerViewInCrossProcessFrame --lang=en-US --service-sandbox-type=network --no-sandbox --log-file=/snap/spotify/41/usr/share/spotify/debug.log --log-severity=disable --product-version=Spotify/1.1.26.501 --lang=en --log-file=/snap/spotify/41/usr/share/spotify/debug.log --service-request-channel-token=12181125137532323279 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+anas     14092  2.2  2.0 1627768 239172 ?      Sl   16:05   2:22 /snap/spotify/41/usr/share/spotify/spotify --type=renderer --no-sandbox --log-file=/snap/spotify/41/usr/share/spotify/debug.log --field-trial-handle=3355503710480226164,12992793315471644132,131072 --disable-features=MimeHandlerViewInCrossProcessFrame --lang=en-US --log-file=/snap/spotify/41/usr/share/spotify/debug.log --log-severity=disable --product-version=Spotify/1.1.26.501 --disable-spell-checking --num-raster-threads=2 --enable-main-frame-before-activation --service-request-channel-token=1086795024783994782 --renderer-client-id=3 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+anas     14113  0.1  1.0 909828 122204 ?       Sl   16:05   0:09 /snap/spotify/41/usr/share/spotify/spotify --type=gpu-process --field-trial-handle=3355503710480226164,12992793315471644132,131072 --disable-features=MimeHandlerViewInCrossProcessFrame --no-sandbox --log-file=/snap/spotify/41/usr/share/spotify/debug.log --log-severity=disable --product-version=Spotify/1.1.26.501 --lang=en --gpu-preferences=KAAAAAAAAAAgAAAgAAAAAAAAYAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA --use-gl=swiftshader-webgl --log-file=/snap/spotify/41/usr/share/spotify/debug.log --service-request-channel-token=17906407289764298461
+anas     14299  0.0  0.0 326180  8844 ?        Sl   16:06   0:00 /usr/lib/gvfs/gvfsd-http --spawner :1.4 /org/gtk/gvfs/exec_spaw/6
+anas     14306  1.9  3.6 1366512 427612 ?      SLl  16:06   1:59 /opt/google/chrome/chrome https://github.com/koalaman/shellcheck/wiki/SC2140
+anas     14313  0.0  0.0   7448   676 ?        S    16:06   0:00 cat
+anas     14314  0.0  0.0   7448   676 ?        S    16:06   0:00 cat
+anas     14318  0.0  0.5 461016 61148 ?        S    16:06   0:00 /opt/google/chrome/chrome --type=zygote --no-zygote-sandbox --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22,
+anas     14319  0.0  0.5 461016 61400 ?        S    16:06   0:00 /opt/google/chrome/chrome --type=zygote --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22,
+anas     14320  0.0  0.0  26432  2912 ?        S    16:06   0:00 /opt/google/chrome/nacl_helper
+anas     14321  0.0  0.0  26432  3724 ?        S    16:06   0:00 /opt/google/chrome/nacl_helper
+anas     14324  0.0  0.1 461016 15972 ?        S    16:06   0:00 /opt/google/chrome/chrome --type=zygote --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22,
+anas     14351 10.6  1.2 693948 140668 ?       Sl   16:06  10:53 /opt/google/chrome/chrome --type=gpu-process --field-trial-handle=6398430288080381778,9841777107042086208,131072 --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --gpu-preferences=MAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAQAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA= --shared-files
+anas     14355  0.2  0.8 572764 94232 ?        SLl  16:06   0:17 /opt/google/chrome/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --service-sandbox-type=network --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --shared-files
+anas     14363  0.0  0.2 525908 25664 ?        S    16:07   0:00 /opt/google/chrome/chrome --type=broker
+anas     14390  0.0  0.9 9026580 116120 ?      Sl   16:07   0:02 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=9 --no-v8-untrusted-code-mitigations --shared-files
+anas     14412  0.0  0.7 4773908 83928 ?       Sl   16:07   0:00 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --extension-process --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=4 --no-v8-untrusted-code-mitigations --shared-files
+anas     14454  0.0  0.8 4840472 102372 ?      Sl   16:07   0:01 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --extension-process --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=5 --no-v8-untrusted-code-mitigations --shared-files
+anas     14462  0.0  0.6 4768440 77844 ?       Sl   16:07   0:00 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --extension-process --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=6 --no-v8-untrusted-code-mitigations --shared-files
+anas     14463  0.0  0.9 4805320 114024 ?      Sl   16:07   0:04 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --extension-process --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=7 --no-v8-untrusted-code-mitigations --shared-files
+anas     14772  0.0  0.5 633056 58996 ?        Sl   16:08   0:00 /opt/google/chrome/chrome --type=utility --utility-sub-type=audio.mojom.AudioService --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --service-sandbox-type=audio --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --shared-files
+root     16081  0.0  0.0      0     0 ?        I    16:23   0:00 [kworker/3:0]
+anas     16331  0.6  1.9 4995300 225612 ?      Sl   16:27   0:32 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=58 --no-v8-untrusted-code-mitigations --shared-files
+anas     16385  4.3  1.3 4862420 153260 ?      Sl   16:27   3:34 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=60 --no-v8-untrusted-code-mitigations --shared-files
+anas     16446  0.2  1.5 4894128 180336 ?      Sl   16:28   0:10 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --extension-process --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=62 --no-v8-untrusted-code-mitigations --shared-files
+anas     16452  0.2  1.4 4879156 175128 ?      Sl   16:28   0:10 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --extension-process --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=63 --no-v8-untrusted-code-mitigations --shared-files
+anas     16481  0.2  1.4 4898556 172716 ?      Sl   16:28   0:09 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --extension-process --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=61 --no-v8-untrusted-code-mitigations --shared-files
+anas     16503  0.0  0.7 4770796 86216 ?       Sl   16:28   0:00 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=64 --no-v8-untrusted-code-mitigations --shared-files
+anas     16581  1.6  1.2 4838440 141804 ?      Sl   16:28   1:22 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=68 --no-v8-untrusted-code-mitigations --shared-files
+anas     16592 78.5  1.3 4877464 153400 ?      Sl   16:28  63:17 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=69 --no-v8-untrusted-code-mitigations --shared-files
+anas     16806  0.0  0.2 660244 34232 ?        Sl   16:29   0:01 /usr/lib/gnome-terminal/gnome-terminal-server
+anas     16814  0.0  0.0  22864  5508 pts/18   Ss+  16:29   0:00 bash
+anas     17199  2.6  3.2 3044752 383024 ?      Sl   16:34   2:01 /snap/firefox/400/firefox-bin -contentproc -childID 17 -isForBrowser -prefsLen 8799 -prefMapSize 190851 -parentBuildID 20200720181548 -greomni /snap/firefox/400/omni.ja -appomni /snap/firefox/400/browser/omni.ja -appdir /snap/firefox/400/browser 5566 true tab
+anas     17328  5.2  5.6 3393336 665516 ?      Rl   16:35   3:53 /snap/firefox/400/firefox-bin -contentproc -childID 19 -isForBrowser -prefsLen 8799 -prefMapSize 190851 -parentBuildID 20200720181548 -greomni /snap/firefox/400/omni.ja -appomni /snap/firefox/400/browser/omni.ja -appdir /snap/firefox/400/browser 5566 true tab
+anas     18005  1.7  2.4 2876788 290944 ?      Sl   16:43   1:08 /snap/firefox/400/firefox-bin -contentproc -childID 20 -isForBrowser -prefsLen 8799 -prefMapSize 190851 -parentBuildID 20200720181548 -greomni /snap/firefox/400/omni.ja -appomni /snap/firefox/400/browser/omni.ja -appdir /snap/firefox/400/browser 5566 true tab
+root     18813  0.0  0.0      0     0 ?        I    16:52   0:00 [kworker/3:1]
+anas     18951  0.4  1.3 2635748 154672 ?      Sl   16:53   0:13 /snap/firefox/400/firefox-bin -contentproc -childID 21 -isForBrowser -prefsLen 8799 -prefMapSize 190851 -parentBuildID 20200720181548 -greomni /snap/firefox/400/omni.ja -appomni /snap/firefox/400/browser/omni.ja -appdir /snap/firefox/400/browser 5566 true tab
+anas     18991  0.5  1.2 2613880 140960 ?      Sl   16:53   0:17 /snap/firefox/400/firefox-bin -contentproc -childID 22 -isForBrowser -prefsLen 8799 -prefMapSize 190851 -parentBuildID 20200720181548 -greomni /snap/firefox/400/omni.ja -appomni /snap/firefox/400/browser/omni.ja -appdir /snap/firefox/400/browser 5566 true tab
+anas     19030  0.7  1.8 2841776 220276 ?      Sl   16:54   0:25 /snap/firefox/400/firefox-bin -contentproc -childID 23 -isForBrowser -prefsLen 8799 -prefMapSize 190851 -parentBuildID 20200720181548 -greomni /snap/firefox/400/omni.ja -appomni /snap/firefox/400/browser/omni.ja -appdir /snap/firefox/400/browser 5566 true tab
+root     19277  0.0  0.0      0     0 ?        I    16:55   0:00 [kworker/1:0]
+root     19863  0.0  0.0      0     0 ?        I    16:59   0:01 [kworker/u16:0]
+anas     20505  0.0  0.0 503588  8828 ?        Sl   17:04   0:00 /usr/libexec/xdg-desktop-portal
+anas     20511  0.0  0.2 626512 31648 ?        Sl   17:04   0:00 /usr/libexec/xdg-desktop-portal-gtk
+root     21182  0.0  0.0      0     0 ?        I    17:11   0:00 [kworker/u16:2]
+root     21823  0.0  0.0      0     0 ?        I    17:16   0:00 [kworker/0:1]
+root     21824  0.0  0.0      0     0 ?        I    17:16   0:00 [kworker/2:2]
+root     22994  0.0  0.0      0     0 ?        I    17:28   0:00 [kworker/u16:3]
+root     23040  0.0  0.0      0     0 ?        I    17:29   0:00 [kworker/1:1]
+root     23759  0.0  0.0      0     0 ?        I    17:39   0:00 [kworker/0:2]
+root     23984  0.0  0.0      0     0 ?        I    17:42   0:00 [kworker/2:0]
+root     24115  0.0  0.0      0     0 ?        I    17:43   0:00 [kworker/3:2]
+root     24365  0.0  0.0      0     0 ?        I    17:45   0:00 [kworker/1:2]
+postfix  24416  0.0  0.0  67476  4504 ?        S    17:46   0:00 pickup -l -t unix -u -c
+anas     24523  0.6  0.4 121800 48620 pts/4    S    17:46   0:00 python manage.py runserver
+anas     24528  6.5  0.4 275300 55028 pts/4    Sl   17:46   0:08 /home/anas/freelance/data_logger_server/env/bin/python manage.py runserver
+root     24638  0.0  0.0      0     0 ?        I    17:48   0:00 [kworker/2:1]
+root     24690  0.0  0.0      0     0 ?        I    17:48   0:00 [kworker/1:3]
+root     24707  0.0  0.0      0     0 ?        I    17:48   0:00 [kworker/3:3]
+root     24731  0.0  0.0      0     0 ?        I    17:48   0:00 [kworker/u16:1]
+anas     24732  7.6  1.1 4816312 140160 ?      Sl   17:48   0:04 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=245 --no-v8-untrusted-code-mitigations --shared-files
+anas     24750  0.4  0.7 4776068 92368 ?       Sl   17:48   0:00 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=246 --no-v8-untrusted-code-mitigations --shared-files
+anas     24763 17.8  1.3 4864212 160232 ?      Sl   17:48   0:09 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=247 --no-v8-untrusted-code-mitigations --shared-files
+anas     24798  0.0  0.4 4750772 55852 ?       Sl   17:48   0:00 /opt/google/chrome/chrome --type=renderer --field-trial-handle=6398430288080381778,9841777107042086208,131072 --lang=en-US --enable-crash-reporter=11c694ab-0d49-43e1-accb-ff89ee077f22, --enable-auto-reload --origin-trial-disabled-features=MeasureMemory --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=249 --no-v8-untrusted-code-mitigations --shared-files
+anas     24874  0.0  0.0  37372  3292 pts/4    R+   17:49   0:00 ps aux
