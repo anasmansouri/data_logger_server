@@ -1,0 +1,78 @@
+= Slave
+
+== Create slave
+=== [Brown]#POST# [black]#/slaves_app/Slaves/#
+
+
+[blue]#parameter content type# : [red]#application/json#
+
+[blue]#structure of the body# 
+[source,json]
+{
+  "slave_address": "string",
+  "setting": {
+  		"baudrate": "string",
+  		"parity": "string",
+  		"stopbits": integer,
+  		"bytesize": integer,
+  		"timeout": float
+  		},
+  "name": "string",
+  "enable": true,
+  "mac": "string"
+}
+
+* *slave_address* must be unique and between 1 and 247
+* *setting.baudrate* to choose the right value of this field you have to check the slave documentation .
+* *setting.parity* to choose the right value of this field you have to check the slave documentation .
+* *setting.stopbits* to choose the right value of this field you have to check the slave documentation .
+* *setting.bytesize* to choose the right value of this field you have to check the slave documentation .
+* *setting.timeout* to choose the right value of this field you have to check the slave documentation .
+
+[green]#return the created slaves in success# +
+[red]#return the msg error if not# 
+
+
+== get all slaves
+=== [Brown]#GET# [black]#/slaves_app/Slaves/#
+[blue]#response content type# : [red]#application/json#
+
+[blue]#structure of the return# 
+[source,json]
+[
+    {
+        "slave_address": 1,
+        "setting": {
+            "baudrate": "19200",
+            "parity": "E",
+            "stopbits": 1,
+            "bytesize": 8,
+            "timeout": 0.5
+        },
+        "name": "power meter",
+        "enable": true,
+        "mac": "74-DE-AA-38-30-12"
+    }
+]
+
+
+== get a specefic slave by its address
+=== [Brown]#GET# [black]#/slaves_app/Slaves/{slave_address}/#
+[blue]#response content type# : [red]#application/json#	
+
+[blue]#structure of the return# 
+[source,json]
+
+{
+    "slave_address": 1,
+    "setting": {
+        "baudrate": "19200",
+        "parity": "E",
+        "stopbits": 1,
+        "bytesize": 8,
+        "timeout": 0.5
+    },
+    "name": "power meter",
+    "enable": true,
+    "mac": "74-DE-AA-38-30-12"
+}
