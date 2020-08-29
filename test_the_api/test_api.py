@@ -1,7 +1,7 @@
 import requests
 import time
 
-print("create a slave id : 1 ")
+print("create a slave with id : 1 ")
 first_slave_data = {
     "slave_address": 1,
     "name": "power meter",
@@ -19,7 +19,7 @@ first_slave_data = {
 x = requests.post(url='http://127.0.0.1:8000/slaves_app/Slaves/', json=first_slave_data)
 print(x.json())
 
-print("create a slave id : 2 ")
+print("create a slave with id : 2 ")
 second_slave_data = {
     "slave_address": 1,
     "name": "power meter",

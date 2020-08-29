@@ -1,19 +1,14 @@
 from django.db import transaction
-from django.shortcuts import render
-
-# Create your views here.
 from rest_framework import viewsets
-from rest_framework.decorators import permission_classes, api_view
-from rest_framework.permissions import AllowAny
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
-from slaves_app.functions import read_sensors_values
 from slaves_app.models import Setting, MemoryZone, Slave, MemoryZoneHistory
 from slaves_app.serializers import SettingSerializer, SlaveSerializer, MemoryZoneSerializer, MemoryZoneHistorySerializer
-from rest_framework.response import Response
-from rest_framework.generics import get_object_or_404
-from rest_framework import serializers
-from rest_framework.filters import SearchFilter, OrderingFilter
 from . import my_own_lib
+from .functions import \
+    get_slaves_the_client_is_looking_for, convert_list_of_slaves_to_json_format, \
+    link_memory_zones_with_their_slave_in_a_json_format, get_all_memory_zones_for_each_slave_in_json_format
 
 
 class SettingViewSet(viewsets.ModelViewSet):
@@ -38,22 +33,12 @@ class SlaveViewSet(viewsets.ModelViewSet):
     serializer_class = SlaveSerializer
 
 
-# to serach items using the name or the mac address or the slave address .
-# the return type is list of slaves in json format
 @api_view(['GET'])
 @transaction.atomic
-def salve_search(request):
-    keyword = request.GET.get('search', '')
-    queryset = Slave.get_slaves_with_name_or_mac_or_address_start_with(keyword=keyword)
-    queryset = my_own_lib.remove_redundancy_items_from_a_list(queryset=queryset)
-    serializer = SlaveSerializer(queryset, many=True)
-    list_memory_zone = []
-    for slave in queryset:
-        list_memory_zone.append(list(MemoryZone.objects.filter(slave=slave)))
-    list_memory_zone_json = []
-    for l in list_memory_zone:
-        list_memory_zone_json.append(MemoryZoneSerializer(l, many=True))
-    data = serializer.data
-    for i in range(0, len(data)):
-        data[i]["memory_zone"] = list_memory_zone_json[i].data
-    return Response(data)
+def look_for_slaves(request):
+    slaves = get_slaves_the_client_is_looking_for(request)
+    memory_zones_json = get_all_memory_zones_for_each_slave_in_json_format(slaves)
+    slaves_in_json = convert_list_of_slaves_to_json_format(slaves)
+    slaves_in_json = link_memory_zones_with_their_slave_in_a_json_format(slaves_in_json,
+                                                                         memory_zones_json)
+    return Response(slaves_in_json)

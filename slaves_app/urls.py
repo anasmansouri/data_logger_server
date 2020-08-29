@@ -9,6 +9,6 @@ router.register(r'Setting', views.SettingViewSet, basename="Setting_list")
 router.register(r'MemoryZone', views.MemoryZoneViewSet, basename="Memory_Zone_list")
 router.register(r'MemoryZoneHistory', views.MemoryZoneHistoryViewSet, basename="Memory_Zone_History_list")
 
-urlpatterns = [path('salve_search/', views.salve_search),
+urlpatterns = [path('salve_search/', views.look_for_slaves),
                ]
 urlpatterns += router.urls
