@@ -7,7 +7,9 @@ You can use an existing programming environment for working in Django, or create
 ```
  
 now we have to install the requirement using the command bellow 
+```bash	
 	$ pip3 install -r requirements.txt 
+```
 ## 2nd step:
 we have to install some packages that we are going to use on our code 
 ```bash
@@ -20,13 +22,16 @@ Log in via the MySQL root with the following command:
 ```bash
 	$ sudo mysql -u root
 ```
-We’ll know we are in the MySQL server when our prompt changes to : mysql>
- 
+We’ll know we are in the MySQL server when our prompt changes to : 
+```bash	
+	mysql>
+```
 create a database in MySQL run the following command: 
 ```mysql
 	CREATE DATABASE modbus_db;
 ```
-We are going to create this account, set a password, and grant access to the database we created. We can do this by typing the following command. Remember to choose a strong password here for your database user where we have password:
+We are going to create this account, set a password, and grant access to the database we created.  
+We can do this by typing the following command:
 ```mysql
 	CREATE USER 'mysql_admin'@'%' IDENTIFIED WITH mysql_native_password BY 'q1w2e3r4';
 ```	
@@ -34,7 +39,8 @@ Next, let the database know that our Django user should have complete access to 
 ```mysql
 	GRANT ALL ON modbus_db.* TO 'mysql_admin'@'%';
 ```
-ou now have a database and user account, each made specifically for Django. We need to flush the privileges so that the current instance of MySQL knows about the recent changes we’ve made:
+ou now have a database and user account, each made specifically for Django.  
+We need to flush the privileges so that the current instance of MySQL knows about the recent changes we’ve made:
 ```mysql
 	FLUSH PRIVILEGES;
 ```
@@ -53,27 +59,30 @@ Add the following lines and include your relevant information (the data base, th
  
  
 Once the file has been edited, we need to restart MySQL for the changes to take effect.
- 
+```bash	
 	$ sudo systemctl daemon-reload
 	$ sudo systemctl restart mysql
+``` 
  
- 
-We need to verify that the configurations in Django detect your MySQL server properly. We can do this by running the server. If it fails, it means that the connection isn’t working properly. Otherwise, the connection is valid.
+We need to verify that the configurations in Django detect your MySQL server properly. 
+We can do this by running the server. If it fails, it means that the connection isn’t working properly. Otherwise, the connection is valid.  
 Let’s first apply our changes to Django with the following:
- 
+```bash	
 	$ python3 manage.py makemigrations
 	$ python3 manage.py migrate
- 
+```
+
 With migrations complete, we should verify the successful generation of the MySQL tables that we’ve created via our Django models.
- 
-	mysql modbus_db -u mysql_admin
- 
+```bash
+	$ mysql modbus_db -u mysql_admin
+```
 Now, select our database modbus_db 
-	use modbus_db
- 
+```mysql
+	USE modbus_db
+```
  
 Among the tables are blogsite_comment and blogsite_post. These are the models that we’ve just made ourselves. Let’s validate that they contain the fields we’ve defined.
- 
+```mysql
  
 	mysql> show tables ;
  
@@ -104,9 +113,10 @@ Among the tables are blogsite_comment and blogsite_post. These are the models th
 		| slaves_app_slave                    |
 		+-------------------------------------+
 		21 rows in set (0.00 sec)
- 
+```
+
 let is check that the data base contains the slaves app slave information we run this mysql command :
- 
+```mysql
 	mysql> DESCRIBE slaves_app_slave ;
  
 	OUTPUT:
@@ -120,6 +130,7 @@ let is check that the data base contains the slaves app slave information we run
 		| setting_id    | int(11)      | NO   | UNI | NULL    |       |
 		+---------------+--------------+------+-----+---------+-------+
 		5 rows in set (0.00 sec)
+```
 ## 4th step: (run servers)
 Now we will run django-server, celery-server and the periodic task by executing one script shell:
 ```bash
@@ -128,7 +139,7 @@ Now we will run django-server, celery-server and the periodic task by executing 
 ```
 Note: if you have any problem with the module django-rest-swagger. you have to install manually with this command :
 ```bash
-	pip3 install django-rest-swagger
+	$ pip3 install django-rest-swagger
 ```
  
 ## 5th  step : (testing)
