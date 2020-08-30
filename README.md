@@ -137,6 +137,11 @@ this script will automate those steps bellow :
 3 - we will wait for 31 seconds to wait for the celery server to read the first value from the two slaves , because we are reading values every 15 seconds 
 4 - it will show the values readen from the two slaves . 
 
+
+Note : if you have any problem with the modul django-rest-swagger . you have to install manually with this command 
+	pip3 install django-rest-swagger 
+
+
 		
 		
 	
