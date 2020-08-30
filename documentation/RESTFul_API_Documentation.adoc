@@ -1,0 +1,396 @@
+= RESTFul API Doc [blue]#icon:file[]#
+:icons: font
+
+	
+== Slave
+
+=== Create slave
+==== [Brown]#POST# [black]#/slaves_app/Slaves/#
+
+
+[blue]#parameter content type# : [red]#application/json#
+
+[blue]#structure of the body# 
+[source,json]
+{
+  "slave_address": "string",
+  "setting": {
+  		"baudrate": "string",
+  		"parity": "string",
+  		"stopbits": integer,
+  		"bytesize": integer,
+  		"timeout": float
+  		},
+  "name": "string",
+  "enable": true,
+  "mac": "string"
+}
+
+* *slave_address* must be unique and between 1 and 247
+* *setting.baudrate* to choose the right value of this field you have to check the slave documentation .
+* *setting.parity* to choose the right value of this field you have to check the slave documentation .
+* *setting.stopbits* to choose the right value of this field you have to check the slave documentation .
+* *setting.bytesize* to choose the right value of this field you have to check the slave documentation .
+* *setting.timeout* to choose the right value of this field you have to check the slave documentation .
+
+[green]#return the created slaves in success# +
+[red]#return the msg error if not# 
+
+
+=== get all slaves
+==== [Brown]#GET# [black]#/slaves_app/Slaves/#
+[blue]#response content type# : [red]#application/json#
+
+[blue]#structure of the return# 
+[source,json]
+[
+    {
+        "slave_address": 1,
+        "setting": {
+            "baudrate": "19200",
+            "parity": "E",
+            "stopbits": 1,
+            "bytesize": 8,
+            "timeout": 0.5
+        },
+        "name": "power meter",
+        "enable": true,
+        "mac": "74-DE-AA-38-30-12"
+    }
+]
+
+
+=== get a specefic slave by its address
+==== [Brown]#GET# [black]#/slaves_app/Slaves/{slave_address}/#
+[blue]#response content type# : [red]#application/json#	
+
+[blue]#structure of the return# 
+[source,json]
+
+{
+    "slave_address": 1,
+    "setting": {
+        "baudrate": "19200",
+        "parity": "E",
+        "stopbits": 1,
+        "bytesize": 8,
+        "timeout": 0.5
+    },
+    "name": "power meter",
+    "enable": true,
+    "mac": "74-DE-AA-38-30-12"
+}
+
+
+=== Update slave
+==== [Brown]#PUT# [black]#/slaves_app/Slaves/{slave_address}/#
+
+[blue]#parameter content type# : [red]#application/json#
+
+Use PUT when you want to modify a singular resource which is already a part of resources collection. PUT replaces the resource in its entirety.
+
+* *slave_address* : [gray]#(required)# A unique value identifying this slave.
+
+[blue]#structure of the body# 
+[source,json]
+{
+  "slave_address": "string",
+  "setting": {
+  		"baudrate": "string",
+  		"parity": "string",
+  		"stopbits": integer,
+  		"bytesize": integer,
+  		"timeout": float
+  		},
+  "name": "string",
+  "enable": true,
+  "mac": "string"
+}
+
+* *slave_address* must be unique and between 1 and 247
+* *setting.baudrate* to choose the right value of this field you have to check the slave documentation .
+* *setting.parity* to choose the right value of this field you have to check the slave documentation .
+* *setting.stopbits* to choose the right value of this field you have to check the slave documentation .
+* *setting.bytesize* to choose the right value of this field you have to check the slave documentation .
+* *setting.timeout* to choose the right value of this field you have to check the slave documentation .
+
+[green]#return the created slaves and code *200* in success# +
+[red]#return the msg error if not# 
+
+
+=== delete a specefic slave by its address
+==== [Brown]#DELETE# [black]#/slaves_app/Slaves/{slave_address}/#
+
+* *slave_address* : [gray]#(required)# A unique value identifying this slave.
+
+[green]#return the code *204* if success# +
+[red]#return the msg error if not#
+
+
+
+
+== Settings
+
+=== Create setting
+==== [Brown]#POST# [black]#/slaves_app/Setting/#
+
+
+[blue]#parameter content type# : [red]#application/json#
+
+[blue]#structure of the body# 
+[source,json]
+{
+  "baudrate": "string",
+  "parity": "string",
+  "stopbits": 0,
+  "bytesize": 0,
+  "timeout": 0
+}
+
+* *setting.baudrate* to choose the right value of this field you have to check the slave documentation .
+* *setting.parity* to choose the right value of this field you have to check the slave documentation .
+* *setting.stopbits* to choose the right value of this field you have to check the slave documentation .
+* *setting.bytesize* to choose the right value of this field you have to check the slave documentation .
+* *setting.timeout* to choose the right value of this field you have to check the slave documentation .
+
+[green]#return the created setting and code *201* in success# +
+[red]#return the msg error if not# 
+
+
+=== get all settings
+==== [Brown]#GET# [black]#/slaves_app/Setting/#
+[blue]#response content type# : [red]#application/json#
+
+[blue]#structure of the return# 
+[source,json]
+{
+	{
+    	"baudrate": "19200",
+    	"parity": "E",
+    	"stopbits": 1,
+    	"bytesize": 8,
+   	 	"timeout": 0.5
+	},
+}
+
+[green]#return all settings and code *200* in success# +
+[red]#return the msg error if not# 
+
+
+=== get a specefic setting by its id
+==== [Brown]#GET# [black]#/slaves_app/Setting/{id}/#
+[blue]#response content type# : [red]#application/json#	
+
+[blue]#structure of the return# 
+[source,json]
+
+{
+    "baudrate": "19200",
+    "parity": "E",
+    "stopbits": 1,
+    "bytesize": 8,
+    "timeout": 0.5
+}
+
+* *id* : [gray]#(required)# A unique integer value identifying this setting.
+
+[green]#return the setting and the code *200* in success# +
+[red]#return the msg error if not#
+
+
+=== Update setting
+==== [Brown]#PUT# [black]#/slaves_app/Setting/{id}/#
+
+[blue]#parameter content type# : [red]#application/json#
+
+Use PUT when you want to modify a singular resource which is already a part of resources collection. PUT replaces the resource in its entirety.
+
+
+* *id* : [gray]#(required)# A unique integer value identifying this setting.
+
+[blue]#structure of the body# 
+[source,json]
+{
+  "baudrate": "string",
+  "parity": "string",
+  "stopbits": 0,
+  "bytesize": 0,
+  "timeout": 0
+}
+
+* *setting.baudrate* to choose the right value of this field you have to check the slave documentation .
+* *setting.parity* to choose the right value of this field you have to check the slave documentation .
+* *setting.stopbits* to choose the right value of this field you have to check the slave documentation .
+* *setting.bytesize* to choose the right value of this field you have to check the slave documentation .
+* *setting.timeout* to choose the right value of this field you have to check the slave documentation .
+
+[green]#return the created setting and code *200* in success# +
+[red]#return the msg error if not#
+
+
+=== delete a specefic setting of a slave by its address
+==== [Brown]#DELETE# [black]#/slaves_app/Setting/{id}/#
+
+* *id* : [gray]#(required)# A unique integer value identifying this setting.
+
+[green]#return the code *204* in success# +
+[red]#return the msg error if not#
+
+
+== MemoryZone
+
+=== Create MemoryZone
+==== [Brown]#POST# [black]#/slaves_app/MemoryZone/#
+
+[blue]#parameter content type# : [red]#application/json#
+
+[blue]#structure of the body# 
+
+[source,json]
+{
+  "slave": "string",
+  "start_registers_address": 0,
+  "name": "string",
+  "unit": "string",
+  "type_of_value": "string",
+  "number_of_decimals": 0
+}
+
+* *slave* the slave primary key which is the slave address.
+* *start_registers_address* the address of the first register in the block of memory we are referencing .
+* *name* the name of this block , to choose wisly you have to check the slave documentation .
+* *unit* the unit of the value returned by the sensor in this memory block
+* *type_of_value* the type of value returned by the sensor in this memory block ( you have to choose one on those options)
+..  REAL (FLOAT32) ,SINGLE (FLOAT32),FLOAT32,UNIXTIMEF32,LREAL (FLOAT64),FLOAT  (FLOAT64).
+.. DOUBLE (FLOAT64),FLOAT64,UNIXTIMEF64,INT64,UINT64,UNIXTIMEI64,UNIXTIMEI32,INT32.
+.. DWORD (UINT32),UINT32,INT (INT16),INT16,WORD (UINT16),UINT (UINT16),UINT16.
+.. BOOL (BOOLEAN),BOOLEAN,STRING.
+* *number_of_decimals*
+ 	.. if the content of  type_of_value field is UINT32 or INT32 you have to fill the number_of_decimals with the appropriate value . if you let it 
+	empty it will get by default 0.
+	.. in case the type_of_value is not UINT32 or INT32 the content of the number_of_decimals field has no impact because we are not going to use it to controle the reading from registers, so just let it empty.
+
+	
+
+[green]#return the created memory zone in success# +
+[red]#return the msg error if not# 
+
+
+
+=== get all memory zones
+==== [Brown]#GET# [black]#/slaves_app/MemoryZone/#
+[blue]#response content type# : [red]#application/json#
+
+[blue]#structure of the return# 
+[source,json]
+[
+    {
+        "id": 3,
+        "slave": 1,
+        "start_registers_address": 0,
+        "name": "Voltage",
+        "unit": "V",
+        "type_of_value": "INT32",
+        "number_of_decimals": 1
+    }
+]
+
+
+=== get a specefic memory zone  by its id
+==== [Brown]#GET# [black]#/slaves_app/MemoryZone/{id}/#
+[blue]#response content type# : [red]#application/json#	
+
+[blue]#structure of the return# 
+[source,json]
+
+{
+    "id": 3,
+    "slave": 1,
+    "start_registers_address": 0,
+    "name": "Voltage",
+    "unit": "V",
+    "type_of_value": "INT32",
+    "number_of_decimals": 1
+}
+
+=== Update Memory zone
+==== [Brown]#PUT# [black]#/slaves_app/MemoryZone/{id}//#
+
+[blue]#parameter content type# : [red]#application/json#
+
+Use PUT when you want to modify a singular resource which is already a part of resources collection. PUT replaces the resource in its entirety.
+
+* *id* : [gray]#(required)# A unique integer value identifying this memory zone.
+
+[blue]#structure of the body# 
+[source,json]
+{
+  "slave": "string",
+  "start_registers_address": 0,
+  "name": "string",
+  "unit": "string",
+  "type_of_value": "string",
+  "number_of_decimals": 0
+}
+
+* *slave* the slave primary key which is the slave address.
+* *start_registers_address* the address of the first register in the block of memory we are referencing .
+* *name* the name of this block , to choose wisly you have to check the slave documentation .
+* *unit* the unit of the value returned by the sensor in this memory block
+* *type_of_value* the type of value returned by the sensor in this memory block ( you have to choose one on those options)
+..  REAL (FLOAT32) ,SINGLE (FLOAT32),FLOAT32,UNIXTIMEF32,LREAL (FLOAT64),FLOAT  (FLOAT64).
+.. DOUBLE (FLOAT64),FLOAT64,UNIXTIMEF64,INT64,UINT64,UNIXTIMEI64,UNIXTIMEI32,INT32.
+.. DWORD (UINT32),UINT32,INT (INT16),INT16,WORD (UINT16),UINT (UINT16),UINT16.
+.. BOOL (BOOLEAN),BOOLEAN,STRING.
+* *number_of_decimals*
+ 	.. if the content of  type_of_value field is UINT32 or INT32 you have to fill the number_of_decimals with the appropriate value . if you let it 
+	empty it will get by default 0.
+	.. in case the type_of_value is not UINT32 or INT32 the content of the number_of_decimals field has no impact because we are not going to use it to controle the reading from registers, so just let it empty.
+	
+
+
+[green]#return the created slaves and code *200* in success# +
+[red]#return the msg error if not# 
+
+
+=== delete a specefic memory zone by its id
+==== [Brown]#DELETE# [black]#/slaves_app/MemoryZone/{id}//#
+
+* *id* : [gray]#(required)# A unique integer value identifying this memory zone.
+
+[green]#return the code *204* if success# +
+[red]#return the msg error if not#
+
+
+
+== Memory zone history
+
+
+=== get all memory zones history
+==== [Brown]#GET# [black]#/slaves_app/MemoryZoneHistory/#
+[blue]#response content type# : [red]#application/json#
+
+[blue]#structure of the return# 
+[source,json]
+[
+ {
+   "time_of_picking":"10",
+    "memory_zone":"1",
+    "value":"C"
+    }
+]
+
+
+=== get a specefic memory zone history  by its id
+==== [Brown]#GET# [black]#/slaves_app/MemoryZoneHistory/{id}/#
+[blue]#response content type# : [red]#application/json#	
+
+[blue]#structure of the return# 
+[source,json]
+
+{
+ "time_of_picking":"10",
+ "memory_zone":"1",
+ "value":"C"
+ }
+

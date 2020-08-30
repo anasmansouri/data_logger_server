@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<title>Slave</title>
+<title>RESTFul API Doc</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -416,9 +416,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body class="article">
 <div id="header">
+<h1>RESTFul API Doc <span class="blue"><span class="icon"><i class="fa fa-file"></i></span></span></h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -539,6 +541,275 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_update_slave">Update slave</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_put_span_span_class_black_slaves_app_slaves_slave_address_span"><span class="Brown">PUT</span> <span class="black">/slaves_app/Slaves/{slave_address}/</span></h4>
+<div class="paragraph">
+<p><span class="blue">parameter content type</span> : <span class="red">application/json</span></p>
+</div>
+<div class="paragraph">
+<p>Use PUT when you want to modify a singular resource which is already a part of resources collection. PUT replaces the resource in its entirety.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>slave_address</strong> : <span class="gray">(required)</span> A unique value identifying this slave.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="blue">structure of the body</span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "slave_address": "string",
+  "setting": {
+  		"baudrate": "string",
+  		"parity": "string",
+  		"stopbits": integer,
+  		"bytesize": integer,
+  		"timeout": float
+  		},
+  "name": "string",
+  "enable": true,
+  "mac": "string"
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>slave_address</strong> must be unique and between 1 and 247</p>
+</li>
+<li>
+<p><strong>setting.baudrate</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.parity</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.stopbits</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.bytesize</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.timeout</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="green">return the created slaves and code <strong>200</strong> in success</span><br>
+<span class="red">return the msg error if not</span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delete_a_specefic_slave_by_its_address">delete a specefic slave by its address</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_delete_span_span_class_black_slaves_app_slaves_slave_address_span"><span class="Brown">DELETE</span> <span class="black">/slaves_app/Slaves/{slave_address}/</span></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>slave_address</strong> : <span class="gray">(required)</span> A unique value identifying this slave.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="green">return the code <strong>204</strong> if success</span><br>
+<span class="red">return the msg error if not</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_settings">Settings</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_create_setting">Create setting</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_post_span_span_class_black_slaves_app_setting_span"><span class="Brown">POST</span> <span class="black">/slaves_app/Setting/</span></h4>
+<div class="paragraph">
+<p><span class="blue">parameter content type</span> : <span class="red">application/json</span></p>
+</div>
+<div class="paragraph">
+<p><span class="blue">structure of the body</span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "baudrate": "string",
+  "parity": "string",
+  "stopbits": 0,
+  "bytesize": 0,
+  "timeout": 0
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>setting.baudrate</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.parity</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.stopbits</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.bytesize</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.timeout</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="green">return the created setting and code <strong>201</strong> in success</span><br>
+<span class="red">return the msg error if not</span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get_all_settings">get all settings</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_get_span_span_class_black_slaves_app_setting_span"><span class="Brown">GET</span> <span class="black">/slaves_app/Setting/</span></h4>
+<div class="paragraph">
+<p><span class="blue">response content type</span> : <span class="red">application/json</span></p>
+</div>
+<div class="paragraph">
+<p><span class="blue">structure of the return</span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+	{
+    	"baudrate": "19200",
+    	"parity": "E",
+    	"stopbits": 1,
+    	"bytesize": 8,
+   	 	"timeout": 0.5
+	},
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="green">return all settings and code <strong>200</strong> in success</span><br>
+<span class="red">return the msg error if not</span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get_a_specefic_setting_by_its_id">get a specefic setting by its id</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_get_span_span_class_black_slaves_app_setting_id_span"><span class="Brown">GET</span> <span class="black">/slaves_app/Setting/{id}/</span></h4>
+<div class="paragraph">
+<p><span class="blue">response content type</span> : <span class="red">application/json</span></p>
+</div>
+<div class="paragraph">
+<p><span class="blue">structure of the return</span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "baudrate": "19200",
+    "parity": "E",
+    "stopbits": 1,
+    "bytesize": 8,
+    "timeout": 0.5
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>id</strong> : <span class="gray">(required)</span> A unique integer value identifying this setting.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="green">return the setting and the code <strong>200</strong> in success</span><br>
+<span class="red">return the msg error if not</span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_setting">Update setting</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_put_span_span_class_black_slaves_app_setting_id_span"><span class="Brown">PUT</span> <span class="black">/slaves_app/Setting/{id}/</span></h4>
+<div class="paragraph">
+<p><span class="blue">parameter content type</span> : <span class="red">application/json</span></p>
+</div>
+<div class="paragraph">
+<p>Use PUT when you want to modify a singular resource which is already a part of resources collection. PUT replaces the resource in its entirety.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>id</strong> : <span class="gray">(required)</span> A unique integer value identifying this setting.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="blue">structure of the body</span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "baudrate": "string",
+  "parity": "string",
+  "stopbits": 0,
+  "bytesize": 0,
+  "timeout": 0
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>setting.baudrate</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.parity</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.stopbits</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.bytesize</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>setting.timeout</strong> to choose the right value of this field you have to check the slave documentation .</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="green">return the created setting and code <strong>200</strong> in success</span><br>
+<span class="red">return the msg error if not</span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delete_a_specefic_setting_of_a_slave_by_its_address">delete a specefic setting of a slave by its address</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_delete_span_span_class_black_slaves_app_setting_id_span"><span class="Brown">DELETE</span> <span class="black">/slaves_app/Setting/{id}/</span></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>id</strong> : <span class="gray">(required)</span> A unique integer value identifying this setting.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="green">return the code <strong>204</strong> in success</span><br>
+<span class="red">return the msg error if not</span></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -604,11 +875,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>in case of type_of_value equal INT32 you have to choose fill this number of decimals with the appropriate value . if you let it
+<p>if the content of  type_of_value field is UINT32 or INT32 you have to fill the number_of_decimals with the appropriate value . if you let it
 empty it will get by default 0.</p>
 </li>
 <li>
-<p>in case the type_of_value is not INT32 the value of number of decimals has no rule because we are not going to use this field to controle the reading of data from registers , so just let it empty .</p>
+<p>in case the type_of_value is not UINT32 or INT32 the content of the number_of_decimals field has no impact because we are not going to use it to controle the reading from registers, so just let it empty.</p>
 </li>
 </ol>
 </div>
@@ -674,6 +945,115 @@ empty it will get by default 0.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="_update_memory_zone">Update Memory zone</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_put_span_span_class_black_slaves_app_memoryzone_id_span"><span class="Brown">PUT</span> <span class="black">/slaves_app/MemoryZone/{id}//</span></h4>
+<div class="paragraph">
+<p><span class="blue">parameter content type</span> : <span class="red">application/json</span></p>
+</div>
+<div class="paragraph">
+<p>Use PUT when you want to modify a singular resource which is already a part of resources collection. PUT replaces the resource in its entirety.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>id</strong> : <span class="gray">(required)</span> A unique integer value identifying this memory zone.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="blue">structure of the body</span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "slave": "string",
+  "start_registers_address": 0,
+  "name": "string",
+  "unit": "string",
+  "type_of_value": "string",
+  "number_of_decimals": 0
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>slave</strong> the slave primary key which is the slave address.</p>
+</li>
+<li>
+<p><strong>start_registers_address</strong> the address of the first register in the block of memory we are referencing .</p>
+</li>
+<li>
+<p><strong>name</strong> the name of this block , to choose wisly you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>unit</strong> the unit of the value returned by the sensor in this memory block</p>
+</li>
+<li>
+<p><strong>type_of_value</strong> the type of value returned by the sensor in this memory block ( you have to choose one on those options)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>REAL (FLOAT32) ,SINGLE (FLOAT32),FLOAT32,UNIXTIMEF32,LREAL (FLOAT64),FLOAT  (FLOAT64).</p>
+</li>
+<li>
+<p>DOUBLE (FLOAT64),FLOAT64,UNIXTIMEF64,INT64,UINT64,UNIXTIMEI64,UNIXTIMEI32,INT32.</p>
+</li>
+<li>
+<p>DWORD (UINT32),UINT32,INT (INT16),INT16,WORD (UINT16),UINT (UINT16),UINT16.</p>
+</li>
+<li>
+<p>BOOL (BOOLEAN),BOOLEAN,STRING.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>number_of_decimals</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>if the content of  type_of_value field is UINT32 or INT32 you have to fill the number_of_decimals with the appropriate value . if you let it
+empty it will get by default 0.</p>
+</li>
+<li>
+<p>in case the type_of_value is not UINT32 or INT32 the content of the number_of_decimals field has no impact because we are not going to use it to controle the reading from registers, so just let it empty.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="green">return the created slaves and code <strong>200</strong> in success</span><br>
+<span class="red">return the msg error if not</span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delete_a_specefic_memory_zone_by_its_id">delete a specefic memory zone by its id</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_delete_span_span_class_black_slaves_app_memoryzone_id_span"><span class="Brown">DELETE</span> <span class="black">/slaves_app/MemoryZone/{id}//</span></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>id</strong> : <span class="gray">(required)</span> A unique integer value identifying this memory zone.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="green">return the code <strong>204</strong> if success</span><br>
+<span class="red">return the msg error if not</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_memory_zone_history">Memory zone history</h2>
+<div class="sectionbody">
+<div class="sect2">
 <h3 id="_get_all_memory_zones_history">get all memory zones history</h3>
 <div class="sect3">
 <h4 id="__span_class_brown_get_span_span_class_black_slaves_app_memoryzonehistory_span"><span class="Brown">GET</span> <span class="black">/slaves_app/MemoryZoneHistory/</span></h4>
@@ -722,7 +1102,7 @@ empty it will get by default 0.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-30 01:19:49 +01
+Last updated 2020-08-30 16:42:10 +01
 </div>
 </div>
 </body>
