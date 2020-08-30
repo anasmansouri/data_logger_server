@@ -419,14 +419,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Slave</h1>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_create_slave">Create slave</h2>
+<h2 id="_slave">Slave</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="__span_class_brown_post_span_span_class_black_slaves_app_slaves_span"><span class="Brown">POST</span> <span class="black">/slaves_app/Slaves/</span></h3>
+<h3 id="_create_slave">Create slave</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_post_span_span_class_black_slaves_app_slaves_span"><span class="Brown">POST</span> <span class="black">/slaves_app/Slaves/</span></h4>
 <div class="paragraph">
 <p><span class="blue">parameter content type</span> : <span class="red">application/json</span></p>
 </div>
@@ -478,12 +479,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_get_all_slaves">get all slaves</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="__span_class_brown_get_span_span_class_black_slaves_app_slaves_span"><span class="Brown">GET</span> <span class="black">/slaves_app/Slaves/</span></h3>
+<h3 id="_get_all_slaves">get all slaves</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_get_span_span_class_black_slaves_app_slaves_span"><span class="Brown">GET</span> <span class="black">/slaves_app/Slaves/</span></h4>
 <div class="paragraph">
 <p><span class="blue">response content type</span> : <span class="red">application/json</span></p>
 </div>
@@ -511,12 +510,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_get_a_specefic_slave_by_its_address">get a specefic slave by its address</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="__span_class_brown_get_span_span_class_black_slaves_app_slaves_slave_address_span"><span class="Brown">GET</span> <span class="black">/slaves_app/Slaves/{slave_address}/</span></h3>
+<h3 id="_get_a_specefic_slave_by_its_address">get a specefic slave by its address</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_get_span_span_class_black_slaves_app_slaves_slave_address_span"><span class="Brown">GET</span> <span class="black">/slaves_app/Slaves/{slave_address}/</span></h4>
 <div class="paragraph">
 <p><span class="blue">response content type</span> : <span class="red">application/json</span></p>
 </div>
@@ -544,9 +541,188 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_memoryzone">MemoryZone</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_create_memoryzone">Create MemoryZone</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_post_span_span_class_black_slaves_app_memoryzone_span"><span class="Brown">POST</span> <span class="black">/slaves_app/MemoryZone/</span></h4>
+<div class="paragraph">
+<p><span class="blue">parameter content type</span> : <span class="red">application/json</span></p>
+</div>
+<div class="paragraph">
+<p><span class="blue">structure of the body</span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "slave": "string",
+  "start_registers_address": 0,
+  "name": "string",
+  "unit": "string",
+  "type_of_value": "string",
+  "number_of_decimals": 0
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>slave</strong> the slave primary key which is the slave address.</p>
+</li>
+<li>
+<p><strong>start_registers_address</strong> the address of the first register in the block of memory we are referencing .</p>
+</li>
+<li>
+<p><strong>name</strong> the name of this block , to choose wisly you have to check the slave documentation .</p>
+</li>
+<li>
+<p><strong>unit</strong> the unit of the value returned by the sensor in this memory block</p>
+</li>
+<li>
+<p><strong>type_of_value</strong> the type of value returned by the sensor in this memory block ( you have to choose one on those options)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>REAL (FLOAT32) ,SINGLE (FLOAT32),FLOAT32,UNIXTIMEF32,LREAL (FLOAT64),FLOAT  (FLOAT64).</p>
+</li>
+<li>
+<p>DOUBLE (FLOAT64),FLOAT64,UNIXTIMEF64,INT64,UINT64,UNIXTIMEI64,UNIXTIMEI32,INT32.</p>
+</li>
+<li>
+<p>DWORD (UINT32),UINT32,INT (INT16),INT16,WORD (UINT16),UINT (UINT16),UINT16.</p>
+</li>
+<li>
+<p>BOOL (BOOLEAN),BOOLEAN,STRING.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>number_of_decimals</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>in case of type_of_value equal INT32 you have to choose fill this number of decimals with the appropriate value . if you let it
+empty it will get by default 0.</p>
+</li>
+<li>
+<p>in case the type_of_value is not INT32 the value of number of decimals has no rule because we are not going to use this field to controle the reading of data from registers , so just let it empty .</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="green">return the created memory zone in success</span><br>
+<span class="red">return the msg error if not</span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get_all_memory_zones">get all memory zones</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_get_span_span_class_black_slaves_app_memoryzone_span"><span class="Brown">GET</span> <span class="black">/slaves_app/MemoryZone/</span></h4>
+<div class="paragraph">
+<p><span class="blue">response content type</span> : <span class="red">application/json</span></p>
+</div>
+<div class="paragraph">
+<p><span class="blue">structure of the return</span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">[
+    {
+        "id": 3,
+        "slave": 1,
+        "start_registers_address": 0,
+        "name": "Voltage",
+        "unit": "V",
+        "type_of_value": "INT32",
+        "number_of_decimals": 1
+    }
+]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get_a_specefic_memory_zone_by_its_id">get a specefic memory zone  by its id</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_get_span_span_class_black_slaves_app_memoryzone_id_span"><span class="Brown">GET</span> <span class="black">/slaves_app/MemoryZone/{id}/</span></h4>
+<div class="paragraph">
+<p><span class="blue">response content type</span> : <span class="red">application/json</span></p>
+</div>
+<div class="paragraph">
+<p><span class="blue">structure of the return</span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "id": 3,
+    "slave": 1,
+    "start_registers_address": 0,
+    "name": "Voltage",
+    "unit": "V",
+    "type_of_value": "INT32",
+    "number_of_decimals": 1
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get_all_memory_zones_history">get all memory zones history</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_get_span_span_class_black_slaves_app_memoryzonehistory_span"><span class="Brown">GET</span> <span class="black">/slaves_app/MemoryZoneHistory/</span></h4>
+<div class="paragraph">
+<p><span class="blue">response content type</span> : <span class="red">application/json</span></p>
+</div>
+<div class="paragraph">
+<p><span class="blue">structure of the return</span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">[
+ {
+   "time_of_picking":"10",
+    "memory_zone":"1",
+    "value":"C"
+    }
+]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get_a_specefic_memory_zone_history_by_its_id">get a specefic memory zone history  by its id</h3>
+<div class="sect3">
+<h4 id="__span_class_brown_get_span_span_class_black_slaves_app_memoryzonehistory_id_span"><span class="Brown">GET</span> <span class="black">/slaves_app/MemoryZoneHistory/{id}/</span></h4>
+<div class="paragraph">
+<p><span class="blue">response content type</span> : <span class="red">application/json</span></p>
+</div>
+<div class="paragraph">
+<p><span class="blue">structure of the return</span></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+ "time_of_picking":"10",
+ "memory_zone":"1",
+ "value":"C"
+ }</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-29 20:12:57 +01
+Last updated 2020-08-30 01:19:49 +01
 </div>
 </div>
 </body>

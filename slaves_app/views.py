@@ -1,6 +1,7 @@
 from django.db import transaction
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAdminUser, AllowAny
 from rest_framework.response import Response
 
 from slaves_app.models import Setting, MemoryZone, Slave, MemoryZoneHistory
@@ -21,7 +22,7 @@ class MemoryZoneViewSet(viewsets.ModelViewSet):
     serializer_class = MemoryZoneSerializer
 
 
-# we have to allow only the get
+# Todo  we have to allow only the get
 
 class MemoryZoneHistoryViewSet(viewsets.ModelViewSet):
     queryset = MemoryZoneHistory.objects.all()

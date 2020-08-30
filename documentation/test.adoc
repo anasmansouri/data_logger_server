@@ -1,7 +1,7 @@
-= Slave
+== Slave
 
-== Create slave
-=== [Brown]#POST# [black]#/slaves_app/Slaves/#
+=== Create slave
+==== [Brown]#POST# [black]#/slaves_app/Slaves/#
 
 
 [blue]#parameter content type# : [red]#application/json#
@@ -33,8 +33,8 @@
 [red]#return the msg error if not# 
 
 
-== get all slaves
-=== [Brown]#GET# [black]#/slaves_app/Slaves/#
+=== get all slaves
+==== [Brown]#GET# [black]#/slaves_app/Slaves/#
 [blue]#response content type# : [red]#application/json#
 
 [blue]#structure of the return# 
@@ -56,8 +56,8 @@
 ]
 
 
-== get a specefic slave by its address
-=== [Brown]#GET# [black]#/slaves_app/Slaves/{slave_address}/#
+=== get a specefic slave by its address
+==== [Brown]#GET# [black]#/slaves_app/Slaves/{slave_address}/#
 [blue]#response content type# : [red]#application/json#	
 
 [blue]#structure of the return# 
@@ -76,3 +76,110 @@
     "enable": true,
     "mac": "74-DE-AA-38-30-12"
 }
+
+
+== MemoryZone
+
+=== Create MemoryZone
+==== [Brown]#POST# [black]#/slaves_app/MemoryZone/#
+
+[blue]#parameter content type# : [red]#application/json#
+
+[blue]#structure of the body# 
+
+[source,json]
+{
+  "slave": "string",
+  "start_registers_address": 0,
+  "name": "string",
+  "unit": "string",
+  "type_of_value": "string",
+  "number_of_decimals": 0
+}
+
+* *slave* the slave primary key which is the slave address.
+* *start_registers_address* the address of the first register in the block of memory we are referencing .
+* *name* the name of this block , to choose wisly you have to check the slave documentation .
+* *unit* the unit of the value returned by the sensor in this memory block
+* *type_of_value* the type of value returned by the sensor in this memory block ( you have to choose one on those options)
+..  REAL (FLOAT32) ,SINGLE (FLOAT32),FLOAT32,UNIXTIMEF32,LREAL (FLOAT64),FLOAT  (FLOAT64).
+.. DOUBLE (FLOAT64),FLOAT64,UNIXTIMEF64,INT64,UINT64,UNIXTIMEI64,UNIXTIMEI32,INT32.
+.. DWORD (UINT32),UINT32,INT (INT16),INT16,WORD (UINT16),UINT (UINT16),UINT16.
+.. BOOL (BOOLEAN),BOOLEAN,STRING.
+* *number_of_decimals*
+ 	.. if the content of  type_of_value field is INT32 you have to fill the number_of_decimals with the appropriate value . if you let it 
+	empty it will get by default 0.
+	.. in case the type_of_value is not INT32 the contnet of the number_of_decimals field has no rule because we are not going to use it to controle the reading of data from registers , so just let it empty .
+
+	
+
+[green]#return the created memory zone in success# +
+[red]#return the msg error if not# 
+
+
+
+=== get all memory zones
+==== [Brown]#GET# [black]#/slaves_app/MemoryZone/#
+[blue]#response content type# : [red]#application/json#
+
+[blue]#structure of the return# 
+[source,json]
+[
+    {
+        "id": 3,
+        "slave": 1,
+        "start_registers_address": 0,
+        "name": "Voltage",
+        "unit": "V",
+        "type_of_value": "INT32",
+        "number_of_decimals": 1
+    }
+]
+
+
+=== get a specefic memory zone  by its id
+==== [Brown]#GET# [black]#/slaves_app/MemoryZone/{id}/#
+[blue]#response content type# : [red]#application/json#	
+
+[blue]#structure of the return# 
+[source,json]
+
+{
+    "id": 3,
+    "slave": 1,
+    "start_registers_address": 0,
+    "name": "Voltage",
+    "unit": "V",
+    "type_of_value": "INT32",
+    "number_of_decimals": 1
+}
+
+
+=== get all memory zones history
+==== [Brown]#GET# [black]#/slaves_app/MemoryZoneHistory/#
+[blue]#response content type# : [red]#application/json#
+
+[blue]#structure of the return# 
+[source,json]
+[
+ {
+   "time_of_picking":"10",
+    "memory_zone":"1",
+    "value":"C"
+    }
+]
+
+
+=== get a specefic memory zone history  by its id
+==== [Brown]#GET# [black]#/slaves_app/MemoryZoneHistory/{id}/#
+[blue]#response content type# : [red]#application/json#	
+
+[blue]#structure of the return# 
+[source,json]
+
+{
+ "time_of_picking":"10",
+ "memory_zone":"1",
+ "value":"C"
+ }
+
