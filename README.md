@@ -138,7 +138,7 @@ to be sure that everyting is working you have to run this command
 	$ cd ~
 	$ python3 ~/data_logger_server/unit_tests
 ```
-this script will automate those steps bellow: 
+this script will automate those steps bellow:  
 1 - the creation of two slaves, the first with id 1, and the second with id 2.  
 2 - the creation of two memory zones , the first one is linked with the first slave , and the second with the second slave.  
 3 - we will wait for 31 seconds to wait for the celery server to read the first value from the two slaves , because we are reading values every 15 seconds.  
