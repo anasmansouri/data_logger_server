@@ -137,7 +137,7 @@ Now we will run django-server, celery-server and the periodic task by executing 
 	$ cd start_server
 	$ ./init_script.sh
 ```
-Note: if you have any problem with the module django-rest-swagger. you have to install manually with this command :
+Note: if you have any problem with the module django-rest-swagger. you have to install it manually with this command :
 ```bash
 	$ pip3 install django-rest-swagger
 ```
