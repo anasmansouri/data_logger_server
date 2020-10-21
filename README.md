@@ -1,5 +1,5 @@
 # data_logger_server
-## About : Collaborating on creating a controlled system to read from sensors using modbus protocole and raspberry pi 4 as a server
+## About : this is a slave master project where the raspberry pi 4 is the server who talk with other slaves using modbus protocole .
 
 we used the raspberry pi as a server because it allows to connect several serial port slaves, using Modbus data communications protocol with RTU frame format, used on asynchronous serial data lines RS-485, for the backend we used django framework and the celery server to execute some background tasks with a specific periodicity
 
