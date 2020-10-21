@@ -1,7 +1,7 @@
 # data_logger_server
 ## About :
 
-this is a slave master project where the raspberry pi 4 is the server who talk with other slaves using modbus protocole, for the backend we used django framework and the celery server to execute some background tasks with a specific periodicity .
+this is a slave master project where the raspberry pi 4 is the server who talk with slaves using modbus protocole, for the backend we used django framework and the celery server to execute some background tasks with a specific periodicity .
 
 ## 1st step:
 You can use an existing programming environment for working in Django, or create a new one. We’ll call our env, once it’s created you can activate it:
